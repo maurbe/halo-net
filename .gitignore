@@ -1,0 +1,9 @@
+!*.*
+*.npy
+
+source/sim*
+venv
+
+*.h5
+*.hdf5
+*.pkl
