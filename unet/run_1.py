@@ -22,22 +22,20 @@ from tensorflow import set_random_seed
 np.random.seed(20)
 set_random_seed(20)
 
-# import
 from keras.utils import plot_model
 from keras.models import load_model
 from keras.optimizers import Adam
 from keras.callbacks import ReduceLROnPlateau, EarlyStopping, ModelCheckpoint, TensorBoard, CSVLogger
 
 from helpers.custom_callbacks import (Paranoia,
-                                           Optimizer_cb,
-                                           Live_Prediction_cb,
-                                           Custom_checkpointer)
-from metrics.custom_metrics import (selective_mse, selective_mae,
-                                    r2_score, selective_r2_score,
-                                    selective_mae_normalized)
+                                      Optimizer_cb,
+                                      Live_Prediction_cb,
+                                      Custom_checkpointer)
+from metrics.custom_metrics import (selective_mse,
+                                    selective_mae, selective_mae_normalized,
+                                    r2_score, selective_r2_score)
 from generator.datagen import custom_DataGenerator
 from network.u_net import get_model
-
 
 
 # Hyper-parameters and flags
@@ -75,8 +73,9 @@ net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
 net.summary(line_length=150)
 #plot_model(net, to_file=RUN_FOLDER+'net.png', show_shapes=True, show_layer_names=True)
 
-callbacks = [Custom_checkpointer(save_folder=RUN_FOLDER + '/saved_networks/',
-                                 interval=5, mode='weights_only'),
+callbacks = [Custom_checkpointer(save_folder=RUN_FOLDER + '/saved_networks/', interval=5, mode='weights_only'),
+             Optimizer_cb(save_folder=RUN_FOLDER + '/saved_networks/', interval=5),
+             CSVLogger(RUN_FOLDER+'/history/history.csv', separator='\t', append=True),
              #ModelCheckpoint(filepath=RUN_FOLDER + '/saved_networks/best_net_{epoch:03d}.hdf5',
              #                save_best_only=False, save_weights_only=True, verbose=1),
              #ReduceLROnPlateau(monitor='val_loss',
@@ -84,8 +83,6 @@ callbacks = [Custom_checkpointer(save_folder=RUN_FOLDER + '/saved_networks/',
              #EarlyStopping(patience=100, verbose=1),
              Paranoia(savepath=RUN_FOLDER),
              Live_Prediction_cb(savepath=RUN_FOLDER),
-             CSVLogger(RUN_FOLDER+'/history/history.csv', separator='\t', append=True),
-             Optimizer_cb(save_folder=RUN_FOLDER + '/saved_networks/', interval=5),
              TensorBoard(log_dir=RUN_FOLDER+'/log/')] # we cannot display histograms when using a generator...
 
 train_ids = np.load(path + 'data/ids.npz')['train_ids']
@@ -105,14 +102,14 @@ datagen_params_test  = {'dim': input_shape[0],
                         'batch_size': 1,
                         'n_channels': input_shape[-1],
                         'shuffle': False,
-                        'randomize': False} # IMPORTANT: IT IS PROBABLY BETTER NOT TO RANDOMIZE THE VALIDATION IN ORDER FOR CONSISTENCY
+                        'randomize': False}
 training_generator      = custom_DataGenerator(list_IDs=train_ids, **datagen_params_train)
 validation_generator    = custom_DataGenerator(list_IDs=test_ids, **datagen_params_test)
 
 
 
 if PRETRAINED:
-    # reinitialize the model with with the same hyper_params, or change them if needed
+    # reinitialize the model with the same hyper_params, or change them if needed
     with open('run_1/hyper_param_dict.json') as json_file:
         param_dict = json.load(json_file)
     net = get_model(**hyper_param_dict)
