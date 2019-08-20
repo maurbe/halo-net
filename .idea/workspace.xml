@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unet/debug/kdjns.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/debug/isolated_debugging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unet/run_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/run_1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,16 +16,20 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Biotop2$setup.coverage" NAME="setup Coverage Results" MODIFIED="1565965857697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/cython_helpers" />
-    <SUITE FILE_PATH="coverage/Biotop2$run_1.coverage" NAME="run_1 Coverage Results" MODIFIED="1566218231813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet" />
+    <SUITE FILE_PATH="coverage/Biotop2$custom_metrics.coverage" NAME="custom_metrics Coverage Results" MODIFIED="1566300622592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/metrics" />
     <SUITE FILE_PATH="coverage/Biotop2$sda.coverage" NAME="sda Coverage Results" MODIFIED="1566148780941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet" />
-    <SUITE FILE_PATH="coverage/Biotop2$validating_on_validationA.coverage" NAME="validating_on_validationA Coverage Results" MODIFIED="1566019480448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validationsA" />
     <SUITE FILE_PATH="coverage/Biotop2$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1566149078313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Biotop2$sdjns.coverage" NAME="sdjns Coverage Results" MODIFIED="1566215626552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Biotop2$create_fields.coverage" NAME="create_fields Coverage Results" MODIFIED="1565966197330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
+    <SUITE FILE_PATH="coverage/Biotop2$run_1.coverage" NAME="run_1 Coverage Results" MODIFIED="1566306219942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet" />
+    <SUITE FILE_PATH="coverage/Biotop2$hkbdd.coverage" NAME="hkbdd Coverage Results" MODIFIED="1566302804033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Biotop2$kdjns.coverage" NAME="kdjns Coverage Results" MODIFIED="1566293558057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/debug" />
+    <SUITE FILE_PATH="coverage/Biotop2$validating_on_validationA.coverage" NAME="validating_on_validationA Coverage Results" MODIFIED="1566019480448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validationsA" />
     <SUITE FILE_PATH="coverage/Biotop2$create_sets.coverage" NAME="create_sets Coverage Results" MODIFIED="1565790916886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$predict_boxes.coverage" NAME="predict_boxes Coverage Results" MODIFIED="1566019719091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/Biotop2$tester.coverage" NAME="tester Coverage Results" MODIFIED="1565803739308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$get_halo_catalogues.coverage" NAME="get_halo_catalogues Coverage Results" MODIFIED="1565965633967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
-    <SUITE FILE_PATH="coverage/Biotop2$sdjns.coverage" NAME="sdjns Coverage Results" MODIFIED="1566215626552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Biotop2$create_fields.coverage" NAME="create_fields Coverage Results" MODIFIED="1565966197330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
+    <SUITE FILE_PATH="coverage/Biotop2$custom_callbacks.coverage" NAME="custom_callbacks Coverage Results" MODIFIED="1566305305732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/helpers" />
     <SUITE FILE_PATH="coverage/Biotop2$triple_plotA.coverage" NAME="triple_plotA Coverage Results" MODIFIED="1566022199278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
   </component>
   <component name="FileColors">
@@ -36,10 +43,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unet/run_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1280">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="718">
+              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
               <folding>
-                <element signature="e#4648#5950#0" />
+                <element signature="e#4676#5989#0" />
               </folding>
             </state>
           </provider>
@@ -61,6 +68,7 @@
       <find>saved</find>
       <find>hist</find>
       <find>mosaic</find>
+      <find>64</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,7 +78,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/unet/debug/inspection.py" />
-        <option value="$PROJECT_DIR$/unet/debug/kdjns.py" />
         <option value="$PROJECT_DIR$/source/tester.py" />
         <option value="$PROJECT_DIR$/source/get_halo_catalogues.py" />
         <option value="$PROJECT_DIR$/source/create_fields.py" />
@@ -84,17 +91,21 @@
         <option value="$PROJECT_DIR$/analysis/triple_plotA.py" />
         <option value="$PROJECT_DIR$/unet/data/data_splitter.py" />
         <option value="$PROJECT_DIR$/unet/generator/datagen.py" />
-        <option value="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" />
         <option value="$PROJECT_DIR$/unet/sda.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/unet/network_visualizations/visualize_filter_volumetric.py" />
         <option value="$PROJECT_DIR$/unet/network_visualizations/visualize_intermediate_outputs.py" />
         <option value="$PROJECT_DIR$/sdjns.py" />
+        <option value="$PROJECT_DIR$/unet/debug/kdjns.py" />
+        <option value="$PROJECT_DIR$/unet/debug/isolated_debugging.py" />
+        <option value="$PROJECT_DIR$/unet/metrics/custom_metrics.py" />
+        <option value="$PROJECT_DIR$/hkbdd.py" />
+        <option value="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" />
         <option value="$PROJECT_DIR$/unet/run_1.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="722" />
     <option name="width" value="718" />
     <option name="height" value="900" />
@@ -105,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,11 +129,28 @@
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
               <item name="unet" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="unet" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="unet" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="unet" type="462c0819:PsiDirectoryNode" />
+              <item name="metrics" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,7 +180,51 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.run_1">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="custom_callbacks" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unet/helpers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="custom_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unet/metrics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unet/metrics/custom_metrics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hkbdd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,7 +237,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hkbdd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kdjns" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unet/debug" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unet/debug/isolated_debugging.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,86 +290,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sda" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unet" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unet/sda.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sdjns" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sdjns.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="triple_plotA" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/triple_plotA.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.run_1" />
-      <item itemvalue="Python.triple_plotA" />
-      <item itemvalue="Python.sda" />
-      <item itemvalue="Python.__init__" />
-      <item itemvalue="Python.sdjns" />
+      <item itemvalue="Python.kdjns" />
+      <item itemvalue="Python.custom_metrics" />
+      <item itemvalue="Python.hkbdd" />
+      <item itemvalue="Python.custom_callbacks" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_1" />
-        <item itemvalue="Python.sdjns" />
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.sda" />
-        <item itemvalue="Python.triple_plotA" />
+        <item itemvalue="Python.custom_callbacks" />
+        <item itemvalue="Python.hkbdd" />
+        <item itemvalue="Python.custom_metrics" />
+        <item itemvalue="Python.kdjns" />
       </list>
     </recent_temporary>
   </component>
@@ -299,12 +328,21 @@
       <workItem from="1565974661485" duration="372000" />
       <workItem from="1566019443310" duration="1104000" />
       <workItem from="1566111968678" duration="7753000" />
-      <workItem from="1566210272355" duration="3250000" />
+      <workItem from="1566210272355" duration="3296000" />
+      <workItem from="1566290094309" duration="11691000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated run-script">
+      <created>1566218450052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566218450053</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33592000" />
+    <option name="totallyTimeSpent" value="45329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -312,9 +350,10 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14861111" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38111112" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37222221" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -329,17 +368,17 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.2611111" />
-      <window_info anchor="right" id="Remote Host" order="4" />
-      <window_info anchor="right" auto_hide="true" x="482" y="148" width="475" height="603" id="SciView" order="5" show_stripe_button="false" type="FLOATING" weight="0.3298611" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" auto_hide="true" x="482" y="148" width="475" height="603" id="SciView" order="4" show_stripe_button="false" type="FLOATING" weight="0.3298611" />
+      <window_info anchor="right" id="Database" order="5" />
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14861111" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4377778" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13555555" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -354,45 +393,32 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.36944443" />
-      <window_info anchor="right" id="Remote Host" order="4" />
-      <window_info anchor="right" auto_hide="true" x="482" y="148" width="475" height="603" id="SciView" order="5" show_stripe_button="false" type="FLOATING" weight="0.3298611" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" auto_hide="true" x="482" y="148" width="475" height="603" id="SciView" order="4" show_stripe_button="false" type="FLOATING" weight="0.3298611" />
+      <window_info anchor="right" id="Database" order="5" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated run-script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated run-script" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unet/debug/isolated_debugging.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/analysis/triple.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unet/debug/inspection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unet/debug/kdjns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unet/metrics/custom_metrics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1731">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/unet/movies/progress_anim.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -567,18 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unet/helpers/custom_callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-          <folding>
-            <element signature="e#1184#4665#0" />
-            <element signature="e#4891#5876#0" />
-            <element signature="e#5765#8580#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/unet/data/data_splitter.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -617,19 +631,62 @@
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sdjns.py">
+    <entry file="file://$PROJECT_DIR$/sdjns.py" />
+    <entry file="file://$PROJECT_DIR$/unet/debug/inspection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="220">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unet/debug/isolated_debugging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hkbdd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unet/debug/Bildschirmfoto 2019-07-16 um 15.19.29.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unet/helpers/custom_callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="182" column="64" selection-start-line="182" selection-start-column="64" selection-end-line="182" selection-end-column="64" />
+          <folding>
+            <element signature="e#1291#4545#0" />
+            <element signature="e#4591#5496#0" />
+            <element signature="e#8469#9058#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unet/metrics/custom_metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="83" column="59" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/unet/run_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="718">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
-            <element signature="e#4648#5950#0" />
+            <element signature="e#4676#5989#0" />
           </folding>
         </state>
       </provider>

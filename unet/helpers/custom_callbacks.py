@@ -9,6 +9,7 @@
 
 import matplotlib.pyplot as plt
 import matplotlib
+from matplotlib.colors import LinearSegmentedColormap
 from keras import callbacks
 import keras.backend as K
 import numpy as np
@@ -114,30 +115,6 @@ class Paranoia(callbacks.Callback, ):
         plt.show(block=False)
         plt.pause(0.01)
 
-class Optimizer_cb(callbacks.Callback):
-    def __init__(self, interval, save_folder):
-        self.interval = interval
-        self.save_folder = save_folder
-
-    def on_train_begin(self, logs=None):
-        self.i = 1
-    def on_epoch_end(self, epoch, logs=None):
-        lr = self.model.optimizer.lr
-        decay = self.model.optimizer.decay
-        iterations = self.model.optimizer.iterations
-        lr_with_decay = lr / (1. + decay * K.cast(iterations, K.dtype(decay)))
-
-        symbolic_weights = getattr(self.model.optimizer, 'weights')
-        weight_values = K.batch_get_value(symbolic_weights)
-
-        if epoch % self.interval == 0:  # save every k-th epoch
-            with open(self.save_folder + 'latest_optimizer_state.pkl', 'wb') as f:
-                pickle.dump(weight_values, f, protocol=2)
-            print('-> current learning_rate:', K.eval(lr_with_decay))
-            print('-> current decay:', K.eval(decay))
-            print('-> saved optimizer state')
-        self.i += 1
-
 class Live_Prediction_cb(callbacks.Callback):
     def __init__(self, savepath):
         self.savepath = savepath
@@ -160,42 +137,102 @@ class Live_Prediction_cb(callbacks.Callback):
         cb.ax.tick_params(labelsize=9)
         return cb
 
-    def on_epoch_end(self, epoch, logs=None):
+    def make_regular_plot(self, x, y, pred, t, epoch):
+        mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#6067B3',
+                                                             #   '#969CCA',
+                                                             '#6067B3', '#5C3C9A', '#45175D', '#2F1435',
+                                                             '#601A49', '#8C2E50', '#A14250',
+                                                             '#B86759',
+                                                             '#E0D9E1'][::-1])
+        f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 5))
+        im1 = ax1.imshow(x[:, :, 50, 0], cmap='magma', vmin=-3, vmax=3)
+        im2 = ax2.imshow(y[:, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
+        im3 = ax3.imshow(pred[0, :, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
 
+        cb1 = self.colorbar(im1, 'Input density contrast')
+        cb2 = self.colorbar(im2, 'Ground truth distance')
+        cb3 = self.colorbar(im3, 'Predicted distance at iteration {}'.format(epoch + 1))
+        cb1.set_ticks([-2, -1, 0, 1, 2])
+        cb2.set_ticks([0, 0.5, 1])
+        cb3.set_ticks([0, 0.5, 1])
+        cb1.outline.set_linewidth(1.5)
+        cb2.outline.set_linewidth(1.5)
+        cb3.outline.set_linewidth(1.5)
+
+        #ax1.axis('off')
+        #ax2.axis('off')
+        #ax3.axis('off')
+        plt.tight_layout()
+        plt.savefig(self.savepath + '/live_output/p_{0:}_{1:}'.format(t, epoch + 1), dpi=250)
+        plt.close()
+
+    def make_gradient_plot(self, y, pred, t, epoch):
+
+        y = y[:, :, :, 0]
+        dx, dy, dz = np.gradient(y)
+        gy = np.sqrt(dx**2 + dy**2 + dz**2)
+
+        pred = pred[0, :, :, :, 0]
+        dx, dy, dz = np.gradient(pred)
+        gpred = np.sqrt(dx**2 + dy**2 + dz**2)
+
+        diff = y - pred
+        dx, dy, dz = np.gradient(diff)
+        gdiff = np.sqrt(dx**2 + dy**2 + dz**2)
+
+        f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 5))
+        Vmax = gy.max()
+        im1 = ax1.imshow(gy[:, :, 50], cmap='twilight', vmin=0, vmax=Vmax)
+        im2 = ax2.imshow(gpred[:, :, 50], cmap='twilight', vmin=0, vmax=Vmax)
+        im3 = ax3.imshow(gdiff[:, :, 50], cmap='RdBu', vmin=-Vmax, vmax=Vmax)
+
+        cb1 = self.colorbar(im1, r'Ground truth $|\nabla d|$')
+        cb2 = self.colorbar(im2, r'Predicted $|\nabla D|$ at iteration'.format(epoch + 1))
+        cb3 = self.colorbar(im3, r'Residual $|\nabla D|$ at iteration {}'.format(epoch + 1))
+        cb1.set_ticks([0, 0.05, 0.1])
+        cb2.set_ticks([0, 0.05, 0.1])
+        cb3.set_ticks([-0.2, 0, 0.2])
+        cb1.outline.set_linewidth(1.5)
+        cb2.outline.set_linewidth(1.5)
+        cb3.outline.set_linewidth(1.5)
+
+        #ax1.axis('off')
+        #ax2.axis('off')
+        #ax3.axis('off')
+        plt.tight_layout()
+        plt.savefig(self.savepath + '/live_output/p_{0:}_{1:}_gradients'.format(t, epoch + 1), dpi=250)
+        plt.close()
+
+    def on_epoch_end(self, epoch, logs=None):
         for t in [0, 13, 26, 50, 53, 62]:
             x = np.load(os.getcwd() + '/data/validation/x_{}.npy'.format(t))
             y = np.load(os.getcwd() + '/data/validation/y_{}.npy'.format(t))
             pred = self.model.predict(x[np.newaxis, ...])
 
-            from matplotlib.colors import LinearSegmentedColormap
-            mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#6067B3',
-                                                                 #   '#969CCA',
-                                                                 '#6067B3', '#5C3C9A', '#45175D', '#2F1435',
-                                                                 '#601A49', '#8C2E50', '#A14250',
-                                                                 '#B86759',
-                                                                 '#E0D9E1'][::-1])
+            self.make_regular_plot(x=x, y=y, pred=pred, t=t, epoch=epoch)
+            self.make_gradient_plot(y=y, pred=pred, t=t, epoch=epoch)
 
-            f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12,5))
-            im1 = ax1.imshow(x[:, :, 50, 0], cmap='magma', vmin=-3, vmax=3)
-            im2 = ax2.imshow(y[:, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
-            im3 = ax3.imshow(pred[0, :, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
 
-            cb1 = self.colorbar(im1, 'Input density contrast')
-            cb2 = self.colorbar(im2, 'Ground truth distance')
-            cb3 = self.colorbar(im3, 'Predicted distance at iteration {}'.format(epoch+1))
-            cb1.set_ticks([-2, -1, 0, 1, 2])
-            cb2.set_ticks([0, 0.5, 1])
-            cb3.set_ticks([0, 0.5, 1])
-            cb1.outline.set_linewidth(1.5)
-            cb2.outline.set_linewidth(1.5)
-            cb3.outline.set_linewidth(1.5)
+class Optimizer_cb(callbacks.Callback):
+    def __init__(self, interval, save_folder):
+        self.interval = interval
+        self.save_folder = save_folder
 
-            ax1.axis('off')
-            ax2.axis('off')
-            ax3.axis('off')
-            plt.tight_layout()
-            plt.savefig(self.savepath+'/live_output/p_{0:}_{1:}'.format(t, epoch+1), dpi=250)
-            plt.close()
+    def on_epoch_end(self, epoch, logs=None):
+        if epoch % self.interval == 0:  # save every k-th epoch
+            lr = self.model.optimizer.lr
+            decay = self.model.optimizer.decay
+            iterations = self.model.optimizer.iterations
+            lr_with_decay = lr / (1. + decay * K.cast(iterations, K.dtype(decay)))
+
+            symbolic_weights = getattr(self.model.optimizer, 'weights')
+            weight_values = K.batch_get_value(symbolic_weights)
+
+            with open(self.save_folder + 'latest_optimizer_state.pkl', 'wb') as f:
+                pickle.dump(weight_values, f, protocol=2)
+            print('↓ saved optimizer state')
+            # print('-> current learning_rate:', K.eval(lr_with_decay))
+            # print('-> current decay:', K.eval(decay))
 
 class Custom_checkpointer(callbacks.Callback):
     def __init__(self, interval, save_folder, mode):
