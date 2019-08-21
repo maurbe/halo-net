@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/flyby.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/metricsA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/metricsT.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/tiles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/triple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/triple_plotA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/validationsA/validating_on_validationA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/validationsT/validating_on_trainingT.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/create_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/create_fields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/create_sets.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/create_sets.py" afterDir="false" />
-    </list>
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +33,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1660">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -330,7 +304,7 @@
       <workItem from="1566290094309" duration="11718000" />
       <workItem from="1566306413511" duration="13000" />
       <workItem from="1566366196594" duration="479000" />
-      <workItem from="1566376286209" duration="2013000" />
+      <workItem from="1566376286209" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -346,15 +320,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566306349980</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section">
+      <created>1566379846870</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566379846870</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section">
+      <created>1566379873989</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566379873989</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47861000" />
+    <option name="totallyTimeSpent" value="48045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -412,7 +399,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated run-script" />
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots" />
+    <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -720,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="180">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
