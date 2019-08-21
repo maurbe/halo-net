@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots">
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/debug/kdjns.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/debug/isolated_debugging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/run_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/run_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/flyby.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/metricsA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/metricsT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/tiles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/tiles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/triple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/triple_plotA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validationsA/validating_on_validationA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validationsT/validating_on_trainingT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/create_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/create_fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/create_sets.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/create_sets.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +32,8 @@
     <SUITE FILE_PATH="coverage/Biotop2$hkbdd.coverage" NAME="hkbdd Coverage Results" MODIFIED="1566302804033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Biotop2$kdjns.coverage" NAME="kdjns Coverage Results" MODIFIED="1566293558057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/debug" />
     <SUITE FILE_PATH="coverage/Biotop2$validating_on_validationA.coverage" NAME="validating_on_validationA Coverage Results" MODIFIED="1566019480448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validationsA" />
-    <SUITE FILE_PATH="coverage/Biotop2$create_sets.coverage" NAME="create_sets Coverage Results" MODIFIED="1565790916886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$predict_boxes.coverage" NAME="predict_boxes Coverage Results" MODIFIED="1566019719091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
+    <SUITE FILE_PATH="coverage/Biotop2$create_sets.coverage" NAME="create_sets Coverage Results" MODIFIED="1566377989343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$tester.coverage" NAME="tester Coverage Results" MODIFIED="1565803739308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$get_halo_catalogues.coverage" NAME="get_halo_catalogues Coverage Results" MODIFIED="1565965633967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$custom_callbacks.coverage" NAME="custom_callbacks Coverage Results" MODIFIED="1566305305732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/helpers" />
@@ -41,12 +48,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unet/run_1.py">
+        <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+            <state relative-caret-position="1660">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
               <folding>
-                <element signature="e#4676#5989#0" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,14 +87,11 @@
         <option value="$PROJECT_DIR$/unet/debug/inspection.py" />
         <option value="$PROJECT_DIR$/source/tester.py" />
         <option value="$PROJECT_DIR$/source/get_halo_catalogues.py" />
-        <option value="$PROJECT_DIR$/source/create_fields.py" />
         <option value="$PROJECT_DIR$/analysis/helpers/hmf_functions.py" />
-        <option value="$PROJECT_DIR$/analysis/flyby.py" />
         <option value="$PROJECT_DIR$/analysis/metricsA.py" />
         <option value="$PROJECT_DIR$/analysis/metricsT.py" />
         <option value="$PROJECT_DIR$/analysis/tiles.py" />
         <option value="$PROJECT_DIR$/analysis/validationsA/validating_on_validationA.py" />
-        <option value="$PROJECT_DIR$/source/create_sets.py" />
         <option value="$PROJECT_DIR$/analysis/triple_plotA.py" />
         <option value="$PROJECT_DIR$/unet/data/data_splitter.py" />
         <option value="$PROJECT_DIR$/unet/generator/datagen.py" />
@@ -102,10 +106,16 @@
         <option value="$PROJECT_DIR$/hkbdd.py" />
         <option value="$PROJECT_DIR$/unet/helpers/custom_callbacks.py" />
         <option value="$PROJECT_DIR$/unet/run_1.py" />
+        <option value="$PROJECT_DIR$/analysis/flyby.py" />
+        <option value="$PROJECT_DIR$/source/create_sets.py" />
+        <option value="$PROJECT_DIR$/source/create_fields.py" />
+        <option value="$PROJECT_DIR$/analysis/plots_and_movies/flyby.py" />
+        <option value="$PROJECT_DIR$/analysis/plots_and_movies/tiles.py" />
+        <option value="$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="722" />
     <option name="width" value="718" />
     <option name="height" value="900" />
@@ -127,25 +137,13 @@
             <path>
               <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="unet" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="unet" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="unet" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="unet" type="462c0819:PsiDirectoryNode" />
-              <item name="metrics" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="plots_and_movies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -158,7 +156,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -179,7 +177,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_1">
+  <component name="RunManager" selected="Python.create_sets">
+    <configuration name="create_sets" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/create_sets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="custom_callbacks" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -246,28 +266,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="kdjns" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unet/debug" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unet/debug/isolated_debugging.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="run_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -292,18 +290,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.run_1" />
-      <item itemvalue="Python.kdjns" />
       <item itemvalue="Python.custom_metrics" />
       <item itemvalue="Python.hkbdd" />
       <item itemvalue="Python.custom_callbacks" />
+      <item itemvalue="Python.create_sets" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.create_sets" />
         <item itemvalue="Python.run_1" />
         <item itemvalue="Python.custom_callbacks" />
         <item itemvalue="Python.hkbdd" />
         <item itemvalue="Python.custom_metrics" />
-        <item itemvalue="Python.kdjns" />
       </list>
     </recent_temporary>
   </component>
@@ -329,7 +327,10 @@
       <workItem from="1566019443310" duration="1104000" />
       <workItem from="1566111968678" duration="7753000" />
       <workItem from="1566210272355" duration="3296000" />
-      <workItem from="1566290094309" duration="11691000" />
+      <workItem from="1566290094309" duration="11718000" />
+      <workItem from="1566306413511" duration="13000" />
+      <workItem from="1566366196594" duration="479000" />
+      <workItem from="1566376286209" duration="2013000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -338,11 +339,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566218450053</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots">
+      <created>1566306349980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566306349980</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45329000" />
+    <option name="totallyTimeSpent" value="47861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -350,7 +358,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14861111" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18958333" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.37222221" />
@@ -403,7 +411,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated run-script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated run-script" />
+    <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,9 +426,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/analysis/triple.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/unet/movies/progress_anim.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -465,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/create_fields.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analysis/helpers/hmf_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -496,23 +495,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/validationsT/validating_on_trainingT.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/flyby.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding>
-            <element signature="e#677#2103#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/metricsT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/metricsA.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -583,16 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/create_sets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding>
-            <element signature="e#68#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/unet/data/data_splitter.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -649,13 +621,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hkbdd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hkbdd.py" />
     <entry file="file://$PROJECT_DIR$/unet/debug/Bildschirmfoto 2019-07-16 um 15.19.29.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -683,10 +649,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unet/run_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
+        <state relative-caret-position="2020">
           <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
             <element signature="e#4676#5989#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/metricsT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/triple.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/flyby.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#83#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/create_fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="217" column="30" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
+          <folding>
+            <element signature="e#348#794#0" />
+            <element signature="e#844#1077#0" />
+            <element signature="e#1136#4403#0" />
+            <element signature="e#4473#10803#0" />
+            <element signature="e#10622#12128#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/create_sets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="48" />
+          <folding>
+            <element signature="e#68#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/flyby.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/tiles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1660">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -6,6 +6,7 @@ from tqdm import tqdm
 from source.cython_helpers.cython_cic import CICDeposit_3, masking
 import numpy as np, yt, edt, itertools
 import scipy.ndimage as nd
+import os
 
 def linear_kernel(Rs):
     r2 = np.arange(-round(Rs), round(Rs) + 1) ** 2
@@ -210,13 +211,19 @@ def create_mass_label_map(sourcepath, sim, buffer=4):
     cic_id = cic_id[int(buffer):-int(buffer), int(buffer):-int(buffer), int(buffer):-int(buffer)].astype('float32')
     np.save('cic_fields' + sim + '/cic_id' + sim + '.npy', cic_id)
 
+    homedir = os.path.dirname(os.getcwd()) + '/'
+    np.save(homedir + 'analysis/boxes' + sim + '/cic_y'  + sim + '.npy', cic_y)
+    np.save(homedir + 'analysis/boxes' + sim + '/cic_id' + sim + '.npy', cic_id)
+
 def create_distance_maps(sim):
     # now the normalized edt
     cic_id = np.load('cic_fields' + sim + '/cic_id' + sim + '.npy')
     assert (cic_id.shape == (512, 512, 512))
     expanded_cic_id = np.pad(cic_id, pad_width=128, mode='wrap')
     distances = edt.edt(expanded_cic_id.astype(int), black_border=False)[128:-128, 128:-128, 128:-128]
+
     np.save('cic_fields' + sim + '/distancemap_raw' + sim + '.npy', distances.astype('float32'))
+
 
     # now normalize the distances cluster by cluster
     unique_ids = np.unique(cic_id)[1:]  # cut the BG=0

@@ -18,7 +18,7 @@ def create_boxes(sim, halo_mass_threshold, purpose):
     cic_density = np.load('cic_fields' + sim + '/cic_density' + sim + '.npy') * dims**3
     density = nd.gaussian_filter(cic_density, sigma=2.5, mode='wrap') # 1 or higher?
     delta_scaled = scale(density.flatten()).reshape(density.shape)
-    np.save(homedir + 'analysis/boxes' + sim + '/input' + sim + '.npy', delta_scaled.astype('float32'))
+    np.save(homedir + 'analysis/boxes' + sim + '/input_density_contrast' + sim + '.npy', delta_scaled.astype('float32'))
 
     # NO smoothing if possible and NO normalization
     distance_map = np.load('cic_fields' + sim + '/distancemap_norm' + sim + '.npy')
@@ -26,7 +26,7 @@ def create_boxes(sim, halo_mass_threshold, purpose):
     # now the filtering of the distance map (directly)
     mass_mask = (cic_y < halo_mass_threshold)
     distance_map[mass_mask] = 0.0
-    np.save(homedir + 'analysis/boxes' + sim + '/gt' + sim + '.npy', distance_map.astype('float32'))
+    np.save(homedir + 'analysis/boxes' + sim + '/gt_distancemap_norm' + sim + '.npy', distance_map.astype('float32'))
 
     buffer = 32
     shift = 64
