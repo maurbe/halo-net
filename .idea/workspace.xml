@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="" />
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections">
+      <change beforePath="$PROJECT_DIR$/analysis/plots_and_movies/flyby.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/flyby.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/plots_and_movies/tiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/tiles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/plots_and_movies/tiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/tiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/plots_and_movies/triple.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/triple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,12 +118,6 @@
               <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
               <item name="analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="plots_and_movies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,7 +304,7 @@
       <workItem from="1566290094309" duration="11718000" />
       <workItem from="1566306413511" duration="13000" />
       <workItem from="1566366196594" duration="479000" />
-      <workItem from="1566376286209" duration="2197000" />
+      <workItem from="1566376286209" duration="2938000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -334,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566379873989</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections">
+      <created>1566380103047</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566380103047</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48045000" />
+    <option name="totallyTimeSpent" value="48786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -400,7 +407,8 @@
     <MESSAGE value="Updated run-script" />
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots" />
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis section" />
+    <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -689,14 +697,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/flyby.py">
+    <entry file="file://$PROJECT_DIR$/analysis/document_plots/flyby.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/tiles.py">
+    <entry file="file://$PROJECT_DIR$/analysis/document_plots/tiles.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
@@ -706,7 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/plots_and_movies/triple_plotA.py">
+    <entry file="file://$PROJECT_DIR$/analysis/document_plots/triple_plotA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
