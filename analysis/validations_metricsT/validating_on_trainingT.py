@@ -20,7 +20,7 @@ mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#606
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 
 input_shape = (128, 128, 128, 1)
-test_ids  = np.arange(150, 170, 3)
+test_ids  = np.arange(100, 150, 3)  # I like 139, 142
 datagen_params_test = {'dim': input_shape[0],
                        'mode': 'full',
                        'datapath': projectdir + 'source/setsT/trainingT/',

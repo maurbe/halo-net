@@ -1,3 +1,9 @@
+"""
+    Triple plot of input, target and prediction.
+    Use the 8x285 case here, since we are primarily interested in those halos...
+    Do not (!) "correct" for the mean, nor do a smoothing!
+"""
+
 import numpy as np, os
 import scipy.ndimage as nd
 import matplotlib.patches as patches
@@ -30,12 +36,6 @@ def colorbar(mappable, colorbar_label):
     cb.ax.tick_params(labelsize=9)
     return cb
 
-
-"""
-    Triple plot of input, target and prediction. 
-    Use the 8x285 case here, since we are primarily interested in those halos...
-    Do not (!) "correct" for the mean, nor do a smoothing!
-"""
 homedir = os.path.dirname(os.getcwd()) + '/'
 input = np.load(homedir + 'boxesA/input_density_contrastA.npy')
 gt = np.load(homedir + 'boxesA/gt_distancemap_normA.npy')

@@ -16,11 +16,12 @@ mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#606
                                                      '#601A49', '#8C2E50', '#A14250',
                                                      '#B86759',
                                                      '#E0D9E1'][::-1])
-
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 
+mcmap = 'twilight_r'
+
 input_shape = (128, 128, 128, 1)
-test_ids  = np.arange(417, 447, 5)  # I especially like 225, 375, 435, 440
+test_ids  = np.arange(325, 360, 3)  # I especially like 225, 375, 435, 440, 136
 datagen_params_test = {'dim': input_shape[0],
                        'mode': 'full',
                        'datapath': projectdir + 'source/setsA/validationA/',

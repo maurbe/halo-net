@@ -11,6 +11,12 @@ def corrected_size(sizeN):
     return (Rs/Rs1)**3 * sizeN
 
 def plot_regions(distance):
+    """
+    Function for DEBUGGING and optimal parameter SEARCH wrt PEAK finding
+    :param:     initial mask generation threshold (0.3 at the moment8
+    :param:     sigma of gaussian filter <- determine by requiring that no. of identified peaks == number of gt halos
+    :param:     min_distance of peak_local_max <- determine by " " "
+    """
 
     # initial mask generation; has to occur before smoothing of distance
     image = (distance > 0.03) # seems good...
@@ -44,10 +50,10 @@ def plot_regions(distance):
         plt.scatter(ids[1], ids[0], c='red', s=1.0)
     plt.xlim((0, 512))
     plt.ylim((512, 0))
+    plt.show()
     return inds_maxi
 
 def label_regions(distance, sim, save_maxima=False, mode=None, peak_to_threshold_mapping=True):
-
     # initial cut
     distance[distance <= 0.04] = 0.0
     old_dist = distance.copy()
@@ -199,7 +205,7 @@ def label_regions(distance, sim, save_maxima=False, mode=None, peak_to_threshold
         return labels_ws
 
 def label_regions_periodic(distance, sim, save_maxima=False):
-
+    # maybe there is a better way of accounting for the pbc
     d1 = distance
     d2 = np.roll(distance, shift=64, axis=(0, 1, 2))
     d3 = np.roll(distance, shift=128, axis=(0, 1, 2))
