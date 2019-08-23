@@ -62,5 +62,5 @@ def create_boxes(sim, halo_mass_threshold, purpose):
 
                 c += 1
 
-create_boxes(sim='T', halo_mass_threshold=16*285, purpose='training')
+#create_boxes(sim='T', halo_mass_threshold=16*285, purpose='training')
 create_boxes(sim='A', halo_mass_threshold=16*285, purpose='validation')

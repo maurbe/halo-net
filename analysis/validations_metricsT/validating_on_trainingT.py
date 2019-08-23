@@ -16,7 +16,7 @@ mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#606
                                                      '#601A49', '#8C2E50', '#A14250',
                                                      '#B86759',
                                                      '#E0D9E1'][::-1])
-
+mcmap = 'twilight_r'
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 
 input_shape = (128, 128, 128, 1)
@@ -50,8 +50,7 @@ for ti, prediction in zip(test_ids, Prediction):
     x = np.load(projectdir + 'source/setsT/trainingT/x_{}.npy'.format(ti))
     y = np.load(projectdir + 'source/setsT/trainingT/y_{}.npy'.format(ti))
     print('Ground truth min/max:\t', y.min(), y.max(), y.min()/y.mean(), y.max()/y.mean())
-    print('Prediction min/max:\t\t', prediction.min(), prediction.max(), \
-          prediction.min()/prediction.mean(), prediction.max()/prediction.mean(), '\n')
+    print('Prediction min/max:\t\t', prediction.min(), prediction.max(), '\n')
 
     fig, axes = plt.subplots(1, 4, sharex=True, sharey=True, figsize=(10, 5))
     fig.subplots_adjust(wspace=0.1)
@@ -59,11 +58,10 @@ for ti, prediction in zip(test_ids, Prediction):
     xi = x[:, :, 50, 0]
     yi = y[:, :, 50, 0]
     pi = prediction[:, :, 50, 0]
-    Vmax = max(yi.max(), pi.max())
 
     im0 = axes[0].imshow(xi, cmap='magma', vmin=-3, vmax=3)
-    im1 = axes[1].imshow(yi, cmap=mcmap, vmin=0.0, vmax=Vmax)
-    im2 = axes[2].imshow(pi, cmap=mcmap, vmin=0.0, vmax=Vmax)
+    im1 = axes[1].imshow(yi, cmap=mcmap, vmin=0.0, vmax=1.0)
+    im2 = axes[2].imshow(pi, cmap=mcmap, vmin=0.0, vmax=1.0)
     im3 = axes[3].imshow(yi-pi, cmap='seismic')
 
     for ax, im, title in zip(axes, [im0, im1, im2, im3], ['Input density contrast', 'Ground truth', 'Prediction', 'Residual']):

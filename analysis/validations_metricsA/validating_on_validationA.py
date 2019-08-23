@@ -21,7 +21,7 @@ projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 mcmap = 'twilight_r'
 
 input_shape = (128, 128, 128, 1)
-test_ids  = np.arange(325, 360, 3)  # I especially like 225, 375, 435, 440, 136
+test_ids  = np.arange(81, 100, 3)  # I especially like 225, 375, 435, 440, 136, 443
 datagen_params_test = {'dim': input_shape[0],
                        'mode': 'full',
                        'datapath': projectdir + 'source/setsA/validationA/',
@@ -51,8 +51,7 @@ for ti, prediction in zip(test_ids, Prediction):
     x = np.load(projectdir + 'source/setsA/validationA/x_{}.npy'.format(ti))
     y = np.load(projectdir + 'source/setsA/validationA/y_{}.npy'.format(ti))
     print('Ground truth min/max:\t', y.min(), y.max())
-    print('Prediction min/max:\t\t', prediction.min(), prediction.max(), \
-          prediction.min() / prediction.mean(), prediction.max() / prediction.mean(), '\n')
+    print('Prediction min/max:\t\t', prediction.min(), prediction.max(), '\n')
 
     fig, axes = plt.subplots(1, 4, sharex=True, sharey=True, figsize=(10, 5))
     fig.subplots_adjust(wspace=0.1)
@@ -60,11 +59,10 @@ for ti, prediction in zip(test_ids, Prediction):
     xi = x[:, :, 50, 0]
     yi = y[:, :, 50, 0]
     pi = prediction[:, :, 50, 0]
-    Vmax = max(yi.max(), pi.max())
 
     im0 = axes[0].imshow(xi, cmap='magma', vmin=-3, vmax=3)
-    im1 = axes[1].imshow(yi, cmap=mcmap, vmin=0.0, vmax=Vmax)
-    im2 = axes[2].imshow(pi, cmap=mcmap, vmin=0.0, vmax=Vmax)
+    im1 = axes[1].imshow(yi, cmap=mcmap, vmin=0.0, vmax=1.0)
+    im2 = axes[2].imshow(pi, cmap=mcmap, vmin=0.0, vmax=1.0)
     im3 = axes[3].imshow(yi-pi, cmap='seismic')
 
     for ax, im, title in zip(axes, [im0, im1, im2, im3], ['Input density contrast', 'Ground truth', 'Prediction', 'Residual']):
