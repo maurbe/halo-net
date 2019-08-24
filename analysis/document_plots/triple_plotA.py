@@ -30,9 +30,12 @@ input = np.load(homedir + 'boxesA/input_density_contrastA.npy')
 gt = np.load(homedir + 'boxesA/gt_distancemap_normA.npy')
 pred = np.load(homedir + 'boxesA/predictionA.npy')
 
+import scipy.ndimage as nd
+pred = nd.gaussian_filter(pred, sigma=1, mode='wrap')
+
 # Merger situtuation (?): slice 300 middle left
 # 250 has some intersting ones as well
-n = 512-50  # I like: 350, 331,
+n = 15  # I like: 350, 331,
 input = input[...,n]
 gt = gt[...,n]
 pred = pred[...,n]

@@ -49,8 +49,8 @@ def predict_and_stitch(datapath):
                 print(c)
     return box
 
-#box_finalT = predict_and_stitch(datapath='source/setsT/trainingT/')
-#np.save('boxesT/predictionT.npy', box_finalT)
+box_finalT = predict_and_stitch(datapath='source/setsT/trainingT/')
+np.save('boxesT/predictionT.npy', box_finalT)
 
 box_finalA = predict_and_stitch(datapath='source/setsA/validationA/')
 np.save('boxesA/predictionA.npy', box_finalA)

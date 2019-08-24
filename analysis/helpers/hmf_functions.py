@@ -13,30 +13,68 @@ def corrected_size(sizeN):
 def plot_regions(distance):
     """
     Function for DEBUGGING and optimal parameter SEARCH wrt PEAK finding
-    :param:     initial mask generation threshold (0.3 at the moment8
+    :param:     initial mask generation threshold (0.3 at the moment)
     :param:     sigma of gaussian filter <- determine by requiring that no. of identified peaks == number of gt halos
     :param:     min_distance of peak_local_max <- determine by " " "
     """
 
+    plt.figure()
+    plt.imshow(distance, cmap='twilight_r', vmin=0, vmax=1)
+    plt.contour(distance, levels=[0.5], colors=['lightgreen'])
+
     # initial mask generation; has to occur before smoothing of distance
-    image = (distance > 0.03) # seems good...
+    image = (distance >= 0.01)
+    distance[distance < 0.01] = 0.0
+
+    # adaptiveness
+    levels = [1.0, 0.75, 0.5, 0.25, 0.01]
+    sigmas = [4, 3, 2, 1]
+
+    new_dist = distance.copy()
+    for k in range(len(levels)-1):
+        d = new_dist.copy()
+        dshape = distance.shape
+        mask = np.logical_and(distance <= levels[k],
+                              distance > levels[k+1])
+        d = nd.gaussian_filter(d, sigma=sigmas[k], mode='wrap')
+        mean = np.mean(d)
+        new_dist -= mean
+        new_dist = new_dist.flatten()
+        new_dist[mask.flatten()] = d.flatten()[mask.flatten()]
+        new_dist = np.reshape(new_dist, dshape)
+    distance = new_dist
+    distance += abs(distance.min())
+
+    plt.figure()
+    plt.imshow(distance, cmap='twilight_r', vmin=0, vmax=1)
+    #plt.show()
+
+
+
 
     # initial smoothing for eradicating edge effects
-    distance = nd.gaussian_filter(distance, sigma=4.0, mode='wrap')
+    #distance = nd.gaussian_filter(distance, sigma=2.0, mode='wrap')
 
     # local peak finder
-    local_maxi = peak_local_max(distance, indices=False, labels=image, exclude_border=False, min_distance=3)
-    inds_maxi  = peak_local_max(distance, indices=True, labels=image, exclude_border=False, min_distance=3)
+    local_maxi = peak_local_max(distance, indices=False, labels=image, exclude_border=False, min_distance=6)
+    inds_maxi  = peak_local_max(distance, indices=True, labels=image, exclude_border=False, min_distance=6)
+
+
+
 
     # marker-based watershed region fidner
     markers = label(local_maxi)
     labels_ws = watershed(-distance, markers=markers, mask=image, watershed_line=True)
 
+
+
+
+
     # plotting
     plt.figure()
-    plt.imshow(distance, cmap='cubehelix')
+    plt.imshow(distance, cmap='twilight_r', vmin=0, vmax=1)
     for ids in inds_maxi:
-        plt.scatter(ids[1], ids[0], c='red', s=1.0)
+        plt.scatter(ids[1], ids[0], c='lightgreen', s=1.0)
     plt.xlim((0, 512))
     plt.ylim((512, 0))
 
@@ -50,7 +88,7 @@ def plot_regions(distance):
         plt.scatter(ids[1], ids[0], c='red', s=1.0)
     plt.xlim((0, 512))
     plt.ylim((512, 0))
-    plt.show()
+
     return inds_maxi
 
 def label_regions(distance, sim, save_maxima=False, mode=None, peak_to_threshold_mapping=True):
@@ -60,7 +98,6 @@ def label_regions(distance, sim, save_maxima=False, mode=None, peak_to_threshold
 
     # initial mask generation; has to occur before smoothing of distance
     image = (distance.copy() > 0.04)  # old: 0.005
-
 
     # Adaptive thresholding, smoothing and peak-retrieving
     levels = [0.2, 0.07]  # , 0.04]

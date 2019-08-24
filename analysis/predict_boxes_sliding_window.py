@@ -44,12 +44,13 @@ for k in range(17):
                          k * stepsize + buffer : k * stepsize + 128 - buffer]]), axis=0)
             print(c)
             c += 1
-    plt.figure()
-    plt.imshow(box[:, :, 50], cmap='twilight_r')
-    plt.show()
+        if j==2:
+            plt.figure()
+            plt.imshow(box[:, :, 50], cmap='twilight_r', vmin=0, vmax=1)
+            plt.show()
 
 box = box[pad_width:-pad_width, pad_width:-pad_width, pad_width:-pad_width]
-
+#np.save('boxesA/predictionA.npy', box)
 
 """
 size = 96?

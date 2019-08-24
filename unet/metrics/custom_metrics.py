@@ -76,7 +76,7 @@ def image_gradient3d(tensor):
     Gz = tf.stack(Gz, axis=1)
     return Gx, Gy, Gz
 
-def selective_mae_normalized_and_gradients3d(y_true, y_pred):
+def selective_mae_of_gradients3d(y_true, y_pred):
     """
     :param y_true:  self explanatory
     :param y_pred:  self explanatory
@@ -95,14 +95,40 @@ def selective_mae_normalized_and_gradients3d(y_true, y_pred):
     Gy_pred = selection(tensor=Gy_pred, buffer=buffer)
     Gz_pred = selection(tensor=Gz_pred, buffer=buffer)
 
-    loss1  = selective_mae_normalized(y_true=y_true, y_pred=y_pred)
-
-    loss2  = mae(y_true=Gx_true, y_pred=Gx_pred) \
+    loss   = mae(y_true=Gx_true, y_pred=Gx_pred) \
            + mae(y_true=Gy_true, y_pred=Gy_pred) \
            + mae(y_true=Gz_true, y_pred=Gz_pred)
 
-    return loss1 + loss2
+    return loss
 
+
+def loss_DSSIM_tf(y_true, y_pred):
+    patches_true = tf.extract_volume_patches(input=y_true,
+                                             ksizes=[1, 4, 4, 4, 1],
+                                             strides=[1, 1, 1, 1, 1],
+                                             padding='VALID')
+    patches_pred = tf.extract_volume_patches(input=y_pred,
+                                             ksizes=[1, 4, 4, 4, 1],
+                                             strides=[1, 1, 1, 1, 1],
+                                             padding='VALID')
+    u_true, var_true = tf.nn.moments(patches_true + K.epsilon(), axes=[-1])
+    u_pred, var_pred = tf.nn.moments(patches_pred + K.epsilon(), axes=[-1])
+    std_true = K.sqrt(var_true + K.epsilon())
+    std_pred = K.sqrt(var_pred + K.epsilon())
+    c1 = 0.01 ** 2
+    c2 = 0.03 ** 2
+    c3 = c2 / 2.0
+
+    l = ((2 * u_true * u_pred) + c1) / (u_true * u_true + u_pred * u_pred + c1)
+    c = ((2 * std_true * std_pred) + c2) / (var_true + var_pred + c2)
+    s = (std_true * std_pred + c3) / (std_true * std_pred + c3)
+    ssim = l * c * s
+    loss = (1.0 - K.mean(ssim + K.epsilon())) / 2.0
+    return loss
+
+def total_loss(y_true, y_pred):
+    tot_loss = loss_DSSIM_tf(y_true=y_true, y_pred=y_pred) + selective_mae_of_gradients3d(y_true=y_true, y_pred=y_pred)
+    return tot_loss
 
 # ............................................................................
 

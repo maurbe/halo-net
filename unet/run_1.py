@@ -31,8 +31,9 @@ from helpers.custom_callbacks import (Paranoia,
                                       Optimizer_cb,
                                       Live_Prediction_cb,
                                       Custom_checkpointer)
-from metrics.custom_metrics import (selective_mse,
-                                    selective_mae, selective_mae_normalized, selective_mae_normalized_and_gradients3d,
+from metrics.custom_metrics import (total_loss,
+                                    selective_mse,
+                                    selective_mae, selective_mae_normalized,
                                     r2_score, selective_r2_score)
 from generator.datagen import custom_DataGenerator
 from network.u_net import get_model
@@ -66,9 +67,9 @@ if PRETRAINED==False:
 # initialize network
 net = get_model(**hyper_param_dict)
 net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
-            loss=selective_mae_normalized,
+            loss=total_loss,
             metrics=['mse', selective_mse,
-                     'mae', selective_mae, selective_mae_normalized_and_gradients3d,
+                     'mae', selective_mae, selective_mae_normalized,
                       r2_score, selective_r2_score])
 net.summary(line_length=150)
 #plot_model(net, to_file=RUN_FOLDER+'net.png', show_shapes=True, show_layer_names=True)
@@ -112,14 +113,18 @@ if PRETRAINED:
     # reinitialize the model with the same hyper_params, or change them if needed
     with open('run_1/hyper_param_dict.json') as json_file:
         param_dict = json.load(json_file)
+
+    # change the dropout rate to 0
+    # hyper_param_dict['dropout_rate_conv'] = 0.0
+
     net = get_model(**hyper_param_dict)
     print('Reinitialized pretrained model.')
 
     # compile it with the desired loss and metrics
     net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
-                loss=selective_mae_normalized,
+                loss=total_loss,
                 metrics=['mse', selective_mse,
-                         'mae', selective_mae, selective_mae_normalized_and_gradients3d,
+                         'mae', selective_mae, selective_mae_normalized,
                          r2_score, selective_r2_score])
 
     # transfer the weights from (latest) pretrained model
