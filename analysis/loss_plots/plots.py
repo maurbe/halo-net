@@ -25,20 +25,19 @@ val_r2_smoothed = savgol_filter(val_r2, window_length=31, polyorder=3)
 
 
 
-fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(6, 6))
+fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(6, 8))
 fig.subplots_adjust(hspace=0.0)
 ax1.plot(step, loss, '-', color='#1565C0', alpha=0.2, linewidth=2)
 ax1.plot(step, loss_smoothed, '-', color='#1565C0', label='training loss', linewidth=2)
 ax1.plot(val_step, val_loss, '-', color='darkorange', alpha=0.2, linewidth=2)
 ax1.plot(val_step, val_loss_smoothed, '-', color='darkorange', label='validation loss', linewidth=2)
 
-ax1.annotate('stop training', xy=(1400, 0.004), xycoords='data', fontsize=12,
-                xytext=(1600, 0.006), textcoords='data',
+ax1.annotate('stop training', xy=(2060, 0.5), xycoords='data', fontsize=12,
+                xytext=(1600, 0.6), textcoords='data',
                 arrowprops=dict(arrowstyle='-|>, head_width=0.15, head_length=0.3', #linestyle="dashed",
                                 color="k", connectionstyle="angle,angleA=180,angleB=-90,rad=0"))
-ax1.axvline(x=1400, ymin=0.05, ymax = 0.25, linewidth=2, color='k', linestyle=':')
 ax1.ticklabel_format(axis='y', style='sci', scilimits=(0,0))
-ax1.set_ylabel(r'$L_{2,\mathrm{sel}}$')
+ax1.set_ylabel(r'$L_{1,\mathrm{sel}}$')
 ax1.legend(loc='upper right', prop={'size': 15}, frameon=False)
 
 
@@ -47,11 +46,10 @@ ax2.plot(r2_step, r2_smoothed, '-', color='#1565C0', label='training', linewidth
 ax2.plot(val_r2_step, val_r2, '-', color='darkorange', alpha=0.2, linewidth=2)
 ax2.plot(val_r2_step, val_r2_smoothed, '-', color='darkorange', label='validation', linewidth=2)
 
-ax2.annotate('stop training', xy=(1400, 0.6), xycoords='data', fontsize=12,
+ax2.annotate('stop training', xy=(2060, 0.6), xycoords='data', fontsize=12,
                 xytext=(1600, 0.4), textcoords='data',
                 arrowprops=dict(arrowstyle='-|>, head_width=0.15, head_length=0.3', #linestyle="dashed",
                                 color="k", connectionstyle="angle,angleA=180,angleB=-90,rad=0"))
-ax2.axvline(x=1400, ymin=0.75, ymax = 0.95, linewidth=2, color='k', linestyle=':')
 ax2.set_xlabel(r'Iterations')
 ax2.set_ylabel(r'$R^{2}_{\mathrm{sel}}$')
 ax2.legend(loc='lower right', prop={'size': 15}, frameon=False)

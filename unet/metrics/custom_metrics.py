@@ -102,7 +102,11 @@ def selective_mae_of_gradients3d(y_true, y_pred):
     return loss
 
 
-def loss_DSSIM_tf(y_true, y_pred):
+def selective_DSSIM(y_true, y_pred):
+
+    y_true = selection(tensor=y_true, buffer=16)
+    y_pred = selection(tensor=y_pred, buffer=16)
+
     patches_true = tf.extract_volume_patches(input=y_true,
                                              ksizes=[1, 4, 4, 4, 1],
                                              strides=[1, 1, 1, 1, 1],

@@ -33,9 +33,9 @@ pred = np.load(homedir + 'boxesA/predictionA.npy')
 import scipy.ndimage as nd
 pred = nd.gaussian_filter(pred, sigma=1, mode='wrap')
 
-# Merger situtuation (?): slice 300 middle left
+# Merger situation (?): slice 300 middle left
 # 250 has some intersting ones as well
-n = 15  # I like: 350, 331,
+n = 375  # I like: 350, 331,
 input = input[...,n]
 gt = gt[...,n]
 pred = pred[...,n]
@@ -43,7 +43,7 @@ pred = pred[...,n]
 xl, xr = 250, 400
 yb, yt = 320, 460
 
-# first row
+
 f, axes = plt.subplots(1, 3, sharex=True, sharey=True, figsize=(11, 8))
 for ax, title, field, cmap, ticks in zip(axes,
                                          ['Density Contrast', 'Ground Truth', 'Prediction'],

@@ -3,6 +3,7 @@
 
 source/sim*
 venv
+runs
 
 *.h5
 *.hdf5

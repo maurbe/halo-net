@@ -21,7 +21,7 @@ projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 mcmap = 'twilight_r'
 
 input_shape = (128, 128, 128, 1)
-test_ids  = np.arange(81, 100, 3)  # I especially like 225, 375, 435, 440, 136, 443
+test_ids  = np.arange(181, 200, 3)  # I especially like 225, 375, 435, 440, 136, 443
 datagen_params_test = {'dim': input_shape[0],
                        'mode': 'full',
                        'datapath': projectdir + 'source/setsA/validationA/',

@@ -42,14 +42,31 @@ gt = np.load(homedir + 'boxesA/gt_distancemap_normA.npy')
 pred = np.load(homedir + 'boxesA/predictionA.npy')
 
 # Merger situtuation (?): slice 300 middle left
-# 250 has some intersting ones as well
-n = 350  # I like: 350, 331
+# I like: 350, 331
+
+# GOOD example: 375
+#n = 150
+#xl, xr = 10, 220
+#yb, yt = 170, 300
+#key = 'good'
+
+# unwanted MERGER example:
+#n = 50
+#xl, xr = 200, 410
+#yb, yt = 382, 512
+#key = 'merger'
+
+# unwanted SEPARATION example:
+n = 300
+xl, xr = 10, 220
+yb, yt = 360, 490
+key = 'separator'
+
+
 input = input[n]
 gt = gt[n]
 pred = pred[n]
 
-xl, xr = 250, 400
-yb, yt = 320, 460
 
 # first row
 f, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True, figsize=(11, 8))
@@ -59,7 +76,7 @@ Vminp = np.min(input)
 Vmaxd = 1.0
 
 im1 = ax1.imshow(input, cmap='magma', vmin=Vminp, vmax=Vmaxp)
-cb1 = colorbar(im1, r'Normalized Density')
+cb1 = colorbar(im1, r'$\delta$')
 cb1.set_ticks([-3, -2, -1, 0, 1, 2, 3])
 cb1.outline.set_linewidth(1.5)
 ax1.set(xticks=[0, 256, 512], yticks=[0, 256, 512], xlabel='x [cells]', ylabel='y [cells]')
@@ -104,5 +121,5 @@ for ax, field, cm, vMax, vMin in zip([ax1, ax2, ax3], [input, gt, pred], ['magma
     rect = patches.Rectangle((xl, yb), xr-xl, yt-yb,
                              linewidth=1.5, edgecolor='#546E7A', facecolor='none')
     ax.add_patch(rect)
-plt.savefig('triple.png', dpi=300)
+plt.savefig('triple_'+key+'.png', dpi=300)
 plt.show()

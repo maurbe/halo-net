@@ -31,8 +31,7 @@ from helpers.custom_callbacks import (Paranoia,
                                       Optimizer_cb,
                                       Live_Prediction_cb,
                                       Custom_checkpointer)
-from metrics.custom_metrics import (total_loss,
-                                    selective_mse,
+from metrics.custom_metrics import (selective_mse,
                                     selective_mae, selective_mae_normalized,
                                     r2_score, selective_r2_score)
 from generator.datagen import custom_DataGenerator
@@ -67,7 +66,7 @@ if PRETRAINED==False:
 # initialize network
 net = get_model(**hyper_param_dict)
 net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
-            loss=total_loss,
+            loss=selective_mae_normalized,
             metrics=['mse', selective_mse,
                      'mae', selective_mae, selective_mae_normalized,
                       r2_score, selective_r2_score])
@@ -122,10 +121,10 @@ if PRETRAINED:
 
     # compile it with the desired loss and metrics
     net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
-                loss=total_loss,
+                loss=selective_mae_normalized,
                 metrics=['mse', selective_mse,
                          'mae', selective_mae, selective_mae_normalized,
-                         r2_score, selective_r2_score])
+                          r2_score, selective_r2_score])
 
     # transfer the weights from (latest) pretrained model
     list_of_weights = glob.glob('run_1/saved_networks/*.hdf5')
