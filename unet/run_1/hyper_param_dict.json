@@ -1,0 +1,15 @@
+{
+    "input_shape": [
+        128,
+        128,
+        128,
+        1
+    ],
+    "n_filters": 12,
+    "kernel_size": 3,
+    "pool_size": 2,
+    "stride": 2,
+    "dropout_rate_conv": 0.5,
+    "lrelu_alpha": 0.05,
+    "last_activation": "relu"
+}
