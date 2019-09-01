@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/analysis/document_plots/triple_good.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/document_plots/triple_merger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/document_plots/triple_separator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/get_sizes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/accumulated_gt_hmf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/accumulated_hmf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/delta_slice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/distance_slice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/label_slice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/particles_IC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/particles_IC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/particles_z0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/particles_z0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/simple_delta_slice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/simple_distance_slice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/simple_label_slice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_plotA_inset.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/triple_plotA_inset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/helpers/hmf_functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/hmfT/get_proto_sizes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/loss_plots/plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/loss_plots/plots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/predict_boxes_sliding_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/predict_boxes_sliding_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/validations_metricsA/validating_on_validationA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/validations_metricsA/validating_on_validationA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/metrics/custom_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unet/run_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/unet/run_1.py" afterDir="false" />
-    </list>
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,17 +164,6 @@
             <path>
               <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="document_plots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -405,7 +364,7 @@
       <workItem from="1566564324075" duration="14907000" />
       <workItem from="1566626581240" duration="17000" />
       <workItem from="1566627033827" duration="11954000" />
-      <workItem from="1566729297092" duration="90503000" />
+      <workItem from="1566729297092" duration="90825000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -470,11 +429,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566671155310</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Started reworking the analysis section&#10;+ updated the maxima finder to h_maxima-finder">
+      <created>1567261433016</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1567261433016</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173918000" />
+    <option name="totallyTimeSpent" value="174240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -540,7 +506,8 @@
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections" />
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections&#10;+ added intermediate network e14??" />
     <MESSAGE value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections&#10;+ added intermediate network e18??&#10;+ started different stitching technique" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked the custom metric and custom callback section &#10;+ added gradient metric&#10;+ added gradient plots&#10;+ preliminary reworking of analysis sections&#10;+ added intermediate network e18??&#10;+ started different stitching technique" />
+    <MESSAGE value="Started reworking the analysis section&#10;+ updated the maxima finder to h_maxima-finder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started reworking the analysis section&#10;+ updated the maxima finder to h_maxima-finder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -594,9 +561,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdn.py" />
     <entry file="file://$PROJECT_DIR$/analysis/validations_metricsT/validating_on_trainingT.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1004,6 +968,9 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/document_plots/triple_separator.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presentation/label_slice.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
