@@ -31,7 +31,7 @@ gt = np.load(homedir + 'boxesA/gt_distancemap_normA.npy')
 pred = np.load(homedir + 'boxesA/predictionA.npy')
 
 import scipy.ndimage as nd
-pred = nd.gaussian_filter(pred, sigma=1, mode='wrap')
+pred = nd.gaussian_filter(pred, sigma=2, mode='wrap')
 
 # Merger situation (?): slice 300 middle left
 # 250 has some intersting ones as well

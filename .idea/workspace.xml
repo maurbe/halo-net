@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="" />
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/hmfA.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfA/hmfA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/hist2D.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/hist2D.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/hmfT.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/hmfT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/linear_fit.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/linear_fit.png" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,20 +27,21 @@
     <SUITE FILE_PATH="coverage/Biotop2$particles_IC.coverage" NAME="particles_IC Coverage Results" MODIFIED="1567234367565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
     <SUITE FILE_PATH="coverage/Biotop2$tiles.coverage" NAME="tiles Coverage Results" MODIFIED="1566383359559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
     <SUITE FILE_PATH="coverage/Biotop2$contoursplot.coverage" NAME="contoursplot Coverage Results" MODIFIED="1566638689003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf.coverage" NAME="get_final_hmf Coverage Results" MODIFIED="1567188201154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
     <SUITE FILE_PATH="coverage/Biotop2$accumulated_gt_hmf.coverage" NAME="accumulated_gt_hmf Coverage Results" MODIFIED="1567238004792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
     <SUITE FILE_PATH="coverage/Biotop2$simple_distance_slice.coverage" NAME="simple_distance_slice Coverage Results" MODIFIED="1567241366272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf.coverage" NAME="get_final_hmf Coverage Results" MODIFIED="1567414934955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
     <SUITE FILE_PATH="coverage/Biotop2$kdjns.coverage" NAME="kdjns Coverage Results" MODIFIED="1566293558057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/debug" />
     <SUITE FILE_PATH="coverage/Biotop2$validating_on_validationA.coverage" NAME="validating_on_validationA Coverage Results" MODIFIED="1566754738612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metricsA" />
     <SUITE FILE_PATH="coverage/Biotop2$simple_delta_slice.coverage" NAME="simple_delta_slice Coverage Results" MODIFIED="1567241468505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
+    <SUITE FILE_PATH="coverage/Biotop2$dcnsdjcwd.coverage" NAME="dcnsdjcwd Coverage Results" MODIFIED="1567412143500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
     <SUITE FILE_PATH="coverage/Biotop2$get_proto_sizes__1_.coverage" NAME="get_proto_sizes (1) Coverage Results" MODIFIED="1567076941781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
-    <SUITE FILE_PATH="coverage/Biotop2$triple_plotA.coverage" NAME="triple_plotA Coverage Results" MODIFIED="1567243030358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
+    <SUITE FILE_PATH="coverage/Biotop2$triple_plotA.coverage" NAME="triple_plotA Coverage Results" MODIFIED="1567366368170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
     <SUITE FILE_PATH="coverage/Biotop2$custom_metrics.coverage" NAME="custom_metrics Coverage Results" MODIFIED="1566668250355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/metrics" />
     <SUITE FILE_PATH="coverage/Biotop2$analyze_boxes.coverage" NAME="analyze_boxes Coverage Results" MODIFIED="1567173564877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/Biotop2$sda.coverage" NAME="sda Coverage Results" MODIFIED="1566148780941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet" />
     <SUITE FILE_PATH="coverage/Biotop2$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1566149078313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Biotop2$get_proto_sizes.coverage" NAME="get_proto_sizes Coverage Results" MODIFIED="1567071362013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
-    <SUITE FILE_PATH="coverage/Biotop2$find_peak_thresh_relation.coverage" NAME="find_peak_thresh_relation Coverage Results" MODIFIED="1567197176424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$find_peak_thresh_relation.coverage" NAME="find_peak_thresh_relation Coverage Results" MODIFIED="1567414550778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
     <SUITE FILE_PATH="coverage/Biotop2$sdcsa__1_.coverage" NAME="sdcsa (1) Coverage Results" MODIFIED="1567080993982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
     <SUITE FILE_PATH="coverage/Biotop2$particles_z0.coverage" NAME="particles_z0 Coverage Results" MODIFIED="1567235971857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
     <SUITE FILE_PATH="coverage/Biotop2$tets.coverage" NAME="tets Coverage Results" MODIFIED="1567088116921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT/peak_thresh_src" />
@@ -48,8 +57,8 @@
     <SUITE FILE_PATH="coverage/Biotop2$predict_boxes.coverage" NAME="predict_boxes Coverage Results" MODIFIED="1566627830620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/Biotop2$get_halo_catalogues.coverage" NAME="get_halo_catalogues Coverage Results" MODIFIED="1565965633967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/Biotop2$tester.coverage" NAME="tester Coverage Results" MODIFIED="1566717285723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_sizes.coverage" NAME="get_sizes Coverage Results" MODIFIED="1567188122232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf__1_.coverage" NAME="get_final_hmf (1) Coverage Results" MODIFIED="1567188202481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_sizes.coverage" NAME="get_sizes Coverage Results" MODIFIED="1567414776604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf__1_.coverage" NAME="get_final_hmf (1) Coverage Results" MODIFIED="1567414937026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
     <SUITE FILE_PATH="coverage/Biotop2$validating_on_trainingT.coverage" NAME="validating_on_trainingT Coverage Results" MODIFIED="1566565253403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metricsT" />
     <SUITE FILE_PATH="coverage/Biotop2$custom_callbacks.coverage" NAME="custom_callbacks Coverage Results" MODIFIED="1566305305732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unet/helpers" />
     <SUITE FILE_PATH="coverage/Biotop2$jdn.coverage" NAME="jdn Coverage Results" MODIFIED="1566418897117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -63,7 +72,92 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.55625">
+      <split-first>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="180">
+                      <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                      <folding>
+                        <element signature="e#0#31#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/analysis/get_sizes.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="340">
+                      <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+                      <folding>
+                        <element signature="e#0#22#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <splitter split-orientation="vertical" split-proportion="0.5">
+              <split-first>
+                <leaf>
+                  <file pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="266">
+                          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+                          <folding>
+                            <element signature="e#0#22#0" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                </leaf>
+              </split-first>
+              <split-second>
+                <leaf>
+                  <file pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/analysis/hmfA/get_final_hmf.py">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="212">
+                          <caret line="51" selection-start-line="51" selection-end-line="51" />
+                          <folding>
+                            <element signature="e#0#22#0" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                </leaf>
+              </split-second>
+            </splitter>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="109" column="32" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,7 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sdjns.py" />
         <option value="$PROJECT_DIR$/unet/debug/kdjns.py" />
         <option value="$PROJECT_DIR$/unet/debug/isolated_debugging.py" />
         <option value="$PROJECT_DIR$/hkbdd.py" />
@@ -132,23 +225,24 @@
         <option value="$PROJECT_DIR$/analysis/get_sizes.py" />
         <option value="$PROJECT_DIR$/analysis/analyze_boxes.py" />
         <option value="$USER_HOME$/Studium/Master Project/PART 2/Project Tawa/analysis/hmfA/find_peak_thresh_relation.py" />
-        <option value="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" />
         <option value="$PROJECT_DIR$/analysis/hmfA/get_final_hmf.py" />
         <option value="$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py" />
-        <option value="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" />
         <option value="$PROJECT_DIR$/presentation/particles_IC.py" />
         <option value="$PROJECT_DIR$/presentation/particles_z0.py" />
         <option value="$PROJECT_DIR$/presentation/accumulated_gt_hmf.py" />
         <option value="$PROJECT_DIR$/presentation/simple_distance_slice.py" />
         <option value="$PROJECT_DIR$/presentation/simple_delta_slice.py" />
         <option value="$PROJECT_DIR$/presentation/simple_label_slice.py" />
-        <option value="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" />
         <option value="$PROJECT_DIR$/analysis/loss_plots/plots.py" />
         <option value="$PROJECT_DIR$/analysis/document_plots/triple_plotA_inset.py" />
+        <option value="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" />
+        <option value="$PROJECT_DIR$/analysis/document_plots/dcnsdjcwd.py" />
+        <option value="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" />
+        <option value="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -164,6 +258,29 @@
             <path>
               <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="hmfA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Biotop2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Biotop2" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="hmfT" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -204,74 +321,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.triple_plotA_inset">
-    <configuration name="plots" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/loss_plots" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/loss_plots/plots.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="simple_delta_slice" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/presentation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/presentation/simple_delta_slice.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="simple_label_slice" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/presentation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/presentation/simple_label_slice.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="triple_plotA" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+  <component name="RunManager" selected="Python.get_final_hmf (1)">
+    <configuration name="dcnsdjcwd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -284,7 +335,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/document_plots/dcnsdjcwd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -293,7 +344,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="triple_plotA_inset" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+    <configuration name="find_peak_thresh_relation" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,12 +352,78 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/document_plots" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfT" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/document_plots/triple_plotA_inset.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_final_hmf (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfA/get_final_hmf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_final_hmf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfT" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_sizes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/get_sizes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -316,19 +433,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.simple_delta_slice" />
-      <item itemvalue="Python.simple_label_slice" />
-      <item itemvalue="Python.plots" />
-      <item itemvalue="Python.triple_plotA" />
-      <item itemvalue="Python.triple_plotA_inset" />
+      <item itemvalue="Python.find_peak_thresh_relation" />
+      <item itemvalue="Python.dcnsdjcwd" />
+      <item itemvalue="Python.get_sizes" />
+      <item itemvalue="Python.get_final_hmf" />
+      <item itemvalue="Python.get_final_hmf (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.triple_plotA_inset" />
-        <item itemvalue="Python.plots" />
-        <item itemvalue="Python.triple_plotA" />
-        <item itemvalue="Python.simple_label_slice" />
-        <item itemvalue="Python.simple_delta_slice" />
+        <item itemvalue="Python.get_final_hmf (1)" />
+        <item itemvalue="Python.get_final_hmf" />
+        <item itemvalue="Python.get_sizes" />
+        <item itemvalue="Python.find_peak_thresh_relation" />
+        <item itemvalue="Python.dcnsdjcwd" />
       </list>
     </recent_temporary>
   </component>
@@ -364,7 +481,7 @@
       <workItem from="1566564324075" duration="14907000" />
       <workItem from="1566626581240" duration="17000" />
       <workItem from="1566627033827" duration="11954000" />
-      <workItem from="1566729297092" duration="90825000" />
+      <workItem from="1566729297092" duration="96838000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -440,14 +557,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174240000" />
+    <option name="totallyTimeSpent" value="180253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.17986111" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.18125" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -462,7 +580,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Inspection Results" order="12" />
-      <window_info anchor="bottom" id="Run" order="13" weight="0.26222223" />
+      <window_info anchor="bottom" id="Run" order="13" visible="true" weight="0.17777778" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,24 +679,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jdn.py" />
-    <entry file="file://$PROJECT_DIR$/analysis/validations_metricsT/validating_on_trainingT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unet/generator/datagen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analysis/document_plots/flyby.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -766,34 +866,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="114" column="16" lean-forward="true" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#1091#1352#0" />
-            <element signature="e#1863#2205#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Studium/Master Project/PART 2/Project Tawa/analysis/hmfA/find_peak_thresh_relation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/get_sizes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,26 +906,6 @@
     <entry file="file://$PROJECT_DIR$/analysis/hmfT/hmfT.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/hmfA/get_final_hmf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="53" column="53" lean-forward="true" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="70" column="82" lean-forward="true" selection-start-line="70" selection-start-column="82" selection-end-line="70" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/presentation/accumulated_gt_hmf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -869,16 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2463">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -951,16 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis/document_plots/triple_plotA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding>
-            <element signature="e#198#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analysis/document_plots/triple_good.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -972,6 +1010,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/presentation/label_slice.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/hmfA/hist2D.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/hmfT/hist2D.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/document_plots/triple_plotA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="27" selection-start-line="27" selection-end-line="30" selection-end-column="50" />
+          <folding>
+            <element signature="e#198#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/document_plots/dcnsdjcwd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="109" column="32" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/get_sizes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/hmfA/get_final_hmf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -107,8 +107,9 @@ def retrieve_corrected_regions(distance, sim, preload=True):
         mask            = labels_wsF[region]==id
         uncorrected_mass= mask.sum()
         peak_value      = np.max(distance[region][mask])
-        #threshold       = f(uncorrected_mass*np.mean(distance[region][mask]))
-        threshold = f(uncorrected_mass)
+        threshold       = f(1.0/uncorrected_mass*np.max(distance[region][mask]))
+        #threshold = f(uncorrected_mass)
+        #threshold = f(np.median(distance[region][mask]))
         adjusted_mask   = distance[region] >= threshold
 
         corrected_regions[region] += id * np.logical_and(adjusted_mask, mask)
@@ -159,11 +160,11 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
             object_mass.append(combined_mask.sum())
             #object_quan.append(combined_mask.sum() *
             #                   np.mean(distance[region][combined_mask]))
+        peak_vals.append(1.0/object_mass[0] *
+                         np.mean(distance[region][mask])
+                                   * np.ones_like(thresholds))
         #peak_vals.append(object_mass[0]
-        #                 * np.mean(distance[region][mask])
-        #                           * np.ones_like(thresholds))
-        peak_vals.append(object_mass[0]
-                        * np.ones_like(thresholds))
+        #                * np.ones_like(thresholds))
         masses.append(object_mass)
 
 

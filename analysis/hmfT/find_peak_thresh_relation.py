@@ -9,18 +9,18 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'T'
+sim = 'A'
 
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
-
+"""
 plt.figure()
 thresholds = np.linspace(0, 1, 100)
 for trajectory in peak_vals:
     plt.plot(thresholds, trajectory)
 plt.show()
-
+"""
 
 
 
@@ -112,7 +112,7 @@ halo_sizes = data['nr_part'].values
 halo_sizes = halo_sizes[halo_sizes>=16*250]
 print(len(halo_sizes))
 halo_sizes = np.log10(halo_sizes)
-bins_hmf   = 100
+bins_hmf   = 50
 true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
 
 # now get the relevant statistics
@@ -173,9 +173,9 @@ plt.ylabel('$|$n$_{\mathrm{true}}$-n$_{\mathrm{best-fit}}|$')
 plt.figure(figsize=(6, 2.75))
 for pv, cv, mar in zip(Pv, Cv, markers):
     if mar=='d':
-        plt.scatter(pv, cv, marker=mar, color='purple', edgecolors='k')
+        plt.scatter(np.log10(pv), cv, marker=mar, color='purple', edgecolors='k')
     else:
-        plt.scatter(pv, cv, marker=mar, color='cornflowerblue', edgecolors='k')
+        plt.scatter(np.log10(pv), cv, marker=mar, color='cornflowerblue', edgecolors='k')
 
 if False:
     MvA = np.load('peak_thresh_src/MvA.npy')
@@ -187,13 +187,13 @@ if False:
         raise ImportError
     for pv, cv, mar in zip(PvA, CvA, markersA):
         if mar == 'd':
-            plt.scatter(pv, cv, marker=mar, color='red', edgecolors='k')
+            plt.scatter(np.log10(pv), cv, marker=mar, color='red', edgecolors='k')
         else:
-            plt.scatter(pv, cv, marker=mar, color='darkorange', edgecolors='k')
+            plt.scatter(np.log10(pv), cv, marker=mar, color='darkorange', edgecolors='k')
 
-x = np.linspace(0.0, 2e5, 100)
-print(x)
-plt.plot(x, fit(x), zorder=0)#, label='linear fit')
+#x = np.linspace(0.0, 2e5, 100)
+#print(x)
+#plt.plot(x, fit(x), zorder=0)#, label='linear fit')
 plt.xlabel('Peak value')
 plt.ylabel('Contour threshold')
 leg = plt.legend(loc='upper left', prop={'size': 15}, frameon=True, framealpha=1.0)
