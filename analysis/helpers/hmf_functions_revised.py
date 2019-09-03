@@ -8,41 +8,27 @@ def f(mean_distances, raw_masses):
     # Todo: MAKE sure that the thresholds DON'T go up all the way to 1
     # Todo: but only up to what is indicated in the plot (0.4?)
     N0 = 16 * 285
+
     def fit(m):
+        x0 = 3.75
+        x1 = 4.95
+        x2 = 5.65
 
-        P = [5.254736517726764, 7.112314761129568, 5.07115401589218, 3.417892033619879,
-             6.220494922942824, 2.7256100546997932, 4.80787659198392, 1.9859665557554766,
-             4.455193866685188, 3.9066683894320633, 4.748783114403779, 2.4089349140457097,
-             2.6767924581297087, 2.5035738817908717, 1.7326016355676177, 2.103432783736956,
-             5.384313221319651, 3.285739934193872, 2.2493481384640344, 0.0, 6.158211415609253,
-             2.0114952998027906, 2.239712033777085, 1.3441221034471849, 2.284868318070065, 0.0,
-             2.3567581453406525, 1.7783011898791676, 2.5751971352811536, 2.207983352604284][::-1] -0.3
+        y0 = 1.6
+        y1 = 3.4 #3.5
+        y2 = 5.6
 
-        M =     [3.65963101, 3.725155,  3.79067898, 3.85620296, 3.92172695, 3.98725093,
-                4.05277491, 4.1182989,  4.18382288, 4.24934687, 4.31487085, 4.38039483,
-                4.44591882, 4.5114428,  4.57696679, 4.64249077, 4.70801475, 4.77353874,
-                4.83906272, 4.9045867,  4.97011069, 5.03563467, 5.10115866, 5.16668264,
-                5.23220662, 5.29773061, 5.36325459, 5.42877858, 5.49430256, 5.55982654]
-                #5.62535053
-        index = np.argmin(abs(M-m))
-        return P[index]
-
-    """
-    def fit(m):
-        anchor0 = 3.75
-        anchor1 = 3.8
-        anchor2 = 4.35
-        if m < anchor1:
-            s = 2.0 / (anchor1 - anchor0)
-            q = anchor1 - s * anchor1
-            return s*m+q
-        elif m < anchor2:
-            s = 0.52 / (anchor2 - anchor1)
-            q = anchor2 - s * anchor2
-            return 3.24#s*m+q
+        if m < x1:
+            s = (y1 - y0) / (x1 - x0)
+            q = y1 - s * x1
+            return s * m + q
+        elif m < x2:
+            s = (y2 - y1) / (x2 - x1)
+            q = y2 - s * x2
+            return s * m + q
         else:
-            return anchor2
-    """
+            return 5.6
+
     x = np.linspace(0.5, 5.75, 1e3)
     y = np.asarray([fit(m) for m in x])
 
@@ -180,13 +166,13 @@ def retrieve_corrected_regions(distance, sim, preload=True):
 
             uncorrected_mass.append(combined_mask.sum())
             peak_value.append(np.mean(
-                                        uncorrected_mass[0]**(1./3.)/4.0 *
+                                        uncorrected_mass[-1]**(1./3.)/4.0 *
                                         distance[region][combined_mask]))
         peak_value = np.asarray(peak_value)
         peak_value[np.isnan(peak_value)] = 0.0
 
         index       = f(peak_value, uncorrected_mass)
-        threshold = thresholds[index]
+        threshold =   thresholds[index]
         adjusted_mask   = distance[region] >= threshold
 
         corrected_regions[region] += id * np.logical_and(adjusted_mask, mask)
@@ -215,7 +201,7 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 100)
+    thresholds          = np.linspace(0, 1, 50)
     peak_vals           = []
     masses              = []
 
@@ -235,11 +221,10 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
             object_mass.append(combined_mask.sum())
             object_quan.append(np.mean(
-                                object_mass[0]**(1./3.)/4.0 *
+                                object_mass[-1]**(1./3.)/4.0 *
                                 distance[region][combined_mask]))
 
-        peak_vals.append( #-1 * np.mean( np.gradient(object_mass) )
-                           object_quan)
+        peak_vals.append( object_quan )
         #peak_vals.append(object_mass[0]
         #                #/ np.max(distance[region][mask])
         #                * np.ones_like(thresholds))

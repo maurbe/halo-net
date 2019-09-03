@@ -64,12 +64,11 @@ true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
 hist, bin_edges_X, bin_edges_Y, binnumbers = \
     scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count', bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)
 
-print(np.asarray(bin_edges_Y)*1.0)
-raise SystemExit
 
 # prepare for for loop, reverse order...
 # smoothing here (before the for loop below) is totally forbidden, since it would change the values inside
 hist        = np.rot90(hist)
+hist = nd.gaussian_filter(hist, sigma=1)
 print(np.asarray([max(x) for x in hist]).sum(), true_counts.sum())   # all good!
 
 
@@ -103,14 +102,14 @@ print(Pv, markers)
 
 
 
-"""
+
 plt.figure(figsize=(6, 2.75))
 for pv, mv, mar in zip(Pv, Mv, markers):
     if mar=='d':
         plt.scatter(mv, pv, marker=mar, color='purple', edgecolors='k')
     else:
         plt.scatter(mv, pv, marker=mar, color='cornflowerblue', edgecolors='k')
-"""
+
 
 
 
@@ -137,25 +136,25 @@ for points, mar in zip(index_pairs_of_dots, markers):
 
 def fit_M(x):
     m = []
-    anchor0 = 3.75
-    anchor1 = 3.90
-    anchor2 = 4.1
+    x0 = 3.75
+    x1 = 4.95
+    x2 = 5.65
+
+    y0 = 2.1
+    y1 = 3.7
+    y2 = 5.6
+
     for p in x:
-        if p < anchor1:
-            s = 2.16 / (anchor1 - anchor0)
-            q = anchor1 - s * anchor1
+        if p < x1:
+            s = (y1-y0) / (x1 - x0)
+            q = y1 - s * x1
             m.append(s*p+q)
-        elif p < anchor2:
-            s = 0.52 / (anchor2 - anchor1)
-            q = anchor2 - s * anchor2
+        elif p < x2:
+            s = (y2-y1) / (x2 - x1)
+            q = y2 - s * x2
             m.append(s*p+q)
-        elif p >= anchor2:
-            #m = (0.075-0.040) / (anchor2 - anchor1)
-            #q = 0.040 - m*anchor1
-            #cf.append(m * p + q)
-            m.append(4.1)
-        #elif anchor2 >= 0.3:
-        #    cf.append(0.075)
+        else:
+            m.append(5.6)
     return np.asarray(m)
 
 # transform the values from mass fit to the imshow indices [0, 1, ...], really painful.
