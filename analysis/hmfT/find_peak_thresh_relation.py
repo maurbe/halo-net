@@ -9,20 +9,39 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'A'
-
+sim = 'T'
+"""
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
+np.save('raw_masses.npy', raw_masses)
+np.save('peak_vals.npy', peak_vals)
+np.save('contour_fs.npy', contour_fs)
+"""
+raw_masses = np.load('raw_masses.npy')
+peak_vals = np.load('peak_vals.npy')
+contour_fs = np.load('contour_fs.npy')
+
+
 """
 plt.figure()
-thresholds = np.linspace(0, 1, 100)
-for trajectory in peak_vals:
-    plt.plot(thresholds, trajectory)
+for trajectory, rm in zip(peak_vals, raw_masses):
+    plt.plot(rm, trajectory)
+plt.show()
+
+
+plt.figure()
+plt.hist(peak_vals[:, 0], 100, log=True, histtype='step',
+         color='b')
+
+sim = 'A'
+homedir = os.path.dirname(os.getcwd()) + '/'
+predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
+raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
+plt.hist(peak_vals[:, 0], 100, log=True, histtype='step',
+         color='g')
 plt.show()
 """
-
-
 
 
 
@@ -109,8 +128,8 @@ bin_edges_X = np.linspace(0, 1, contour_fs.shape[1], endpoint=True)
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 data       = pd.read_csv(projectdir + 'source/catalog'+sim+'/catalog'+sim+'.csv', delimiter='\t')
 halo_sizes = data['nr_part'].values
-halo_sizes = halo_sizes[halo_sizes>=16*250]
-print(len(halo_sizes))
+halo_sizes = halo_sizes[halo_sizes>=16*285]
+print('gt no. of halos', len(halo_sizes))
 halo_sizes = np.log10(halo_sizes)
 bins_hmf   = 50
 true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
@@ -138,10 +157,16 @@ Cv = []
 Mv = []
 diffs = []
 markers = []
+
+print(true_counts[::-1])
+
 for j, (line, tc) in enumerate(zip(hist, true_counts[::-1])):
     # in theory, we should remove the data that has been assigned to a bin!
     # leaving it in is probably a good approximation
-    index_of_best_fit = np.argmin(abs(line - tc))
+    print(line)
+    print(tc)
+    index_of_best_fit = np.argmin(abs(line - tc) ) # first index with error smaller than 10%
+
     diffs.append(np.min(abs(line -tc)))
     Pv.append(peak_means[j, index_of_best_fit])
     Cv.append(bin_edges_X[index_of_best_fit])
@@ -152,8 +177,8 @@ for j, (line, tc) in enumerate(zip(hist, true_counts[::-1])):
     else:
         markers.append('o')
 
-
-
+print(diffs)
+#raise SystemExit
 
 
 
@@ -226,8 +251,8 @@ plt.tight_layout()
 
 
 # Plot 3: x = contour_thresholds, y = proto halo masses, z = peak means
-f, ax = plt.subplots(figsize=(6, 3))
-im = ax.imshow(peak_means, zorder=0, cmap='bone')
+f, ax = plt.subplots(figsize=(6, 5))
+im = ax.imshow(peak_means, zorder=0, cmap='cubehelix')
 cb = colorbar(mappable=im, colorbar_label='Mean Peak value')
 
 voids_x, voids_y = np.nonzero(hist == 0)[0], np.nonzero(hist == 0)[1]
@@ -251,14 +276,14 @@ for chosen, colo in zip([4467, 267, 13, 27], ['#D8B75E', '#D8B75E', '#D8B75E', '
 """
 ax.set(xticks = np.arange(0, len(bin_edges_X[:-1]))[::10], xticklabels = np.round(bin_edges_X[:-1][::10], 2),
        yticks = np.arange(0, len(bin_edges_Y[::-1][:-1]))[::5], yticklabels = np.round(bin_edges_Y[::-1][:-1][::5] - np.log10(64.0/5.66e10), 1), # second term: conversion from number of particles to real mass
-       xlim = (-0.5, len(bin_edges_X[:-1])-0.5), ylim = (len(bin_edges_Y[:-1])-0.5, -0.5),  # -0.5 in terms of pixel dimensions
+       #xlim = (-0.5, len(bin_edges_X[:-1])-0.5), ylim = (len(bin_edges_Y[:-1])-0.5, -0.5),  # -0.5 in terms of pixel dimensions
        xlabel = 'Contour threshold', ylabel = r'$\log_{10}(\mathrm{M/M}_{\odot})$')
 for points, mar in zip(index_pairs_of_dots, markers):
     if mar=='d':
         ax.scatter(points[0], points[1], marker=mar, color='purple', edgecolors='k', zorder=3)
     else:
         ax.scatter(points[0], points[1], marker=mar, color='cornflowerblue', edgecolors='k', zorder=3)
-ax.set_xlim(0, 75)
+#ax.set_xlim(0, 75)
 plt.savefig('hist2D.png', dpi=250)
 
 
@@ -270,7 +295,8 @@ cb.ax.plot([0, 1], [25 * 1.0/hist.max(), 25 * 1.0/hist.max()], color='darkred', 
 ax.contour(xx, yy, hist, levels=[25], colors=['darkred'])
 ax.set(xticks = np.arange(0, len(bin_edges_X[:-1]))[::10], xticklabels = np.round(bin_edges_X[:-1][::10], 2),
        yticks = np.arange(0, len(bin_edges_Y[::-1][:-1]))[::5], yticklabels = np.round(bin_edges_Y[::-1][:-1][::5] - np.log10(64.0/5.66e10), 1), # second term: conversion from number of particles to real mass
-       xlim = ((0, len(bin_edges_X[:-2]))), xlabel = 'Contour threshold', ylabel = r'$\log_{10}(\mathrm{M/M}_{\odot})$')
+       #xlim = ((0, len(bin_edges_X[:-20]))),
+       xlabel = 'Contour threshold', ylabel = r'$\log_{10}(\mathrm{M/M}_{\odot})$')
 
 
 plt.figure()

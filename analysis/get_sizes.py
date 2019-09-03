@@ -1,4 +1,4 @@
-import numpy as np, os
+import numpy as np
 from analysis.helpers.hmf_functions_revised import retrieve_corrected_regions
 
 def get_sizes(sim):
@@ -13,5 +13,5 @@ def get_sizes(sim):
     np.save('hmf' + sim + '/src/peak_values_predicted' + sim + '.npy', peak_values)
     np.save('hmf' + sim + '/src/corrected_sizes_predicted' + sim + '.npy', corrected_sizes)
 
-get_sizes(sim='T')
+#get_sizes(sim='T')
 get_sizes(sim='A')

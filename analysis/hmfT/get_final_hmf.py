@@ -11,7 +11,6 @@ halo_sizes = np.log10(halo_sizes)
 print('Ground truth number of halos:', len(halo_sizes))
 
 
-
 ps_pred = np.load('src/corrected_sizes_predictedT.npy')
 ps_pred = ps_pred[1:]
 print('Number of proto halos before thresholding:', len(ps_pred))
