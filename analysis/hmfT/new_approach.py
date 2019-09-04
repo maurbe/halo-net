@@ -9,12 +9,12 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'T'
-"""
+sim = 'A'
+
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
-
+"""
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
@@ -140,8 +140,8 @@ def fit_M(x):
     x1 = 4.95
     x2 = 5.65
 
-    y0 = 2.1
-    y1 = 3.7
+    y0 = 1.6
+    y1 = 3.4
     y2 = 5.6
 
     for p in x:

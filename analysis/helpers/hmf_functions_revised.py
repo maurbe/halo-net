@@ -2,12 +2,8 @@ import numpy as np
 import scipy.ndimage as nd
 from skimage.morphology import label, watershed, extrema
 
-import matplotlib.pyplot as plt
-plt.figure()
+
 def f(mean_distances, raw_masses):
-    # Todo: MAKE sure that the thresholds DON'T go up all the way to 1
-    # Todo: but only up to what is indicated in the plot (0.4?)
-    N0 = 16 * 285
 
     def fit(m):
         x0 = 3.75
@@ -46,45 +42,6 @@ def f(mean_distances, raw_masses):
     #plt.show()
     return index
 
-"""
-def f(p):
-    #m = -0.23 / 80000
-    #q = 0.23
-    #return 0.1#m * peak_val + q
-    anchor1 = 1e4
-    anchor2 = 10**(4.3)
-    anchor3 = 1e5
-    if p < anchor1:
-        m = +0.3 / (anchor2 -anchor1)
-        q = 0.3 - m * anchor2
-        return m * p + q
-    elif p <= anchor2:
-        m = -(0.3 - 0.05) / (anchor3 - anchor2)
-        q = 0.3 - m * anchor2
-        return m * p + q
-    else:
-        return 0.05
-
-
-
-def f(p):
-    if p <= 1e3:
-        return 0.05
-    elif p <= 1e4:
-        return 0.18
-    elif p <= 2e4:
-        return 0.15
-    elif p <= 6e4:
-        return 0.12 # 0.1 makes the validation one almost perfect...
-
-    elif p <= 1e5:
-        return 0.07
-    elif p <= 2e5:
-        return 0.06
-
-    else:
-        return 0.03
-"""
 
 def mainfunction(distance, pw=64):
 
