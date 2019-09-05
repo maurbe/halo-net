@@ -21,7 +21,7 @@ print('Number of proto halos after thresholding:', len(ps_pred))
 
 
 all_sets = np.hstack((ps_pred, halo_sizes))
-no_bins = 20
+no_bins = 25
 bins = np.histogram(all_sets, range=(all_sets.min(), all_sets.max()), bins=no_bins)[1]
 bins_inset = np.histogram(all_sets - np.log10(64.0/5.66e10),
                           range=((all_sets-np.log10(64.0/5.66e10)).min(), (all_sets-np.log10(64.0/5.66e10)).max()),

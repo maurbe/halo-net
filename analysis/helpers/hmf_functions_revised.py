@@ -6,24 +6,29 @@ from skimage.morphology import label, watershed, extrema
 def f(mean_distances, raw_masses):
 
     def fit(m):
-        x0 = 3.75
+        X = 3.75
+        x0 = 3.9
         x1 = 4.95
         x2 = 5.65
 
-        y0 = 1.6
-        y1 = 3.4 #3.5
+        Y = 1.3
+        y0 = 1.8
+        y1 = 3.5
         y2 = 5.6
 
-        if m < x1:
+        p=m
+        if p < X:
+            s = (y0 - Y) / (x0 - X)
+            q = y0 - s * x0
+            return s * p + q
+        elif p < x1:
             s = (y1 - y0) / (x1 - x0)
             q = y1 - s * x1
-            return s * m + q
-        elif m < x2:
+            return s * p + q
+        else:
             s = (y2 - y1) / (x2 - x1)
             q = y2 - s * x2
-            return s * m + q
-        else:
-            return 5.6
+            return s * p + q
 
     x = np.linspace(0.5, 5.75, 1e3)
     y = np.asarray([fit(m) for m in x])
@@ -158,7 +163,7 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 50)
+    thresholds          = np.linspace(0, 1, 150)
     peak_vals           = []
     masses              = []
 

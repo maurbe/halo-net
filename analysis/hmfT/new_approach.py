@@ -9,12 +9,12 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'T'
-"""
+sim = 'A'
+
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
-
+"""
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
@@ -56,7 +56,7 @@ halo_sizes = data['nr_part'].values
 halo_sizes = halo_sizes[halo_sizes>=16*285]
 print('gt no. of halos', len(halo_sizes))
 halo_sizes = np.log10(halo_sizes)
-bins_hmf   = 30
+bins_hmf   = 130
 true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
 
 
@@ -68,7 +68,7 @@ hist, bin_edges_X, bin_edges_Y, binnumbers = \
 # prepare for for loop, reverse order...
 # smoothing here (before the for loop below) is totally forbidden, since it would change the values inside
 hist        = np.rot90(hist)
-hist = nd.gaussian_filter(hist, sigma=0.5)
+hist = nd.gaussian_filter(hist, sigma=2)
 print(np.asarray([max(x) for x in hist]).sum(), true_counts.sum())   # all good!
 
 
@@ -136,25 +136,29 @@ for points, mar in zip(index_pairs_of_dots, markers):
 
 def fit_M(x):
     m = []
-    x0 = 3.75
+    X = 3.75
+    x0 = 3.9
     x1 = 4.95
     x2 = 5.65
 
-    y0 = 1.6
-    y1 = 3.4
+    Y = 1.3
+    y0 = 1.8
+    y1 = 3.5
     y2 = 5.6
 
     for p in x:
-        if p < x1:
+        if p < x0:
+            s = (y0 - Y) / (x0 - X)
+            q = y0 - s * x0
+            m.append(s * p + q)
+        elif p < x1:
             s = (y1-y0) / (x1 - x0)
             q = y1 - s * x1
             m.append(s*p+q)
-        elif p < x2:
+        else:
             s = (y2-y1) / (x2 - x1)
             q = y2 - s * x2
             m.append(s*p+q)
-        else:
-            m.append(5.6)
     return np.asarray(m)
 
 # transform the values from mass fit to the imshow indices [0, 1, ...], really painful.

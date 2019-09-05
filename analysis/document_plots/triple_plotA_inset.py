@@ -44,11 +44,11 @@ pred = np.load(homedir + 'boxesA/predictionA.npy')
 # Merger situtuation (?): slice 300 middle left
 # I like: 350, 331
 
-# GOOD example: 375
-#n = 150
-#xl, xr = 10, 220
-#yb, yt = 170, 300
-#key = 'good'
+# GOOD example: 150
+n = 275 #150
+xl, xr = 280, 490 #10, 220
+yb, yt = 40, 170   #170, 300
+key = 'good'
 
 # unwanted MERGER example:
 #n = 50
@@ -57,10 +57,10 @@ pred = np.load(homedir + 'boxesA/predictionA.npy')
 #key = 'merger'
 
 # unwanted SEPARATION example:
-n = 300
-xl, xr = 10, 220
-yb, yt = 360, 490
-key = 'separator'
+#n = 300
+#xl, xr = 10, 220
+#yb, yt = 360, 490
+#key = 'separator'
 
 
 input = input[n]
