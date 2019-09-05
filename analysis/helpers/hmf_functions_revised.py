@@ -163,7 +163,7 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 150)
+    thresholds          = np.linspace(0, 1, 50)
     peak_vals           = []
     masses              = []
 

@@ -9,16 +9,16 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'A'
+sim = 'T'
 
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
-"""
+
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
-"""
+
 raw_masses = np.load('raw_masses.npy')
 peak_vals = np.load('peak_vals.npy')
 
@@ -56,7 +56,7 @@ halo_sizes = data['nr_part'].values
 halo_sizes = halo_sizes[halo_sizes>=16*285]
 print('gt no. of halos', len(halo_sizes))
 halo_sizes = np.log10(halo_sizes)
-bins_hmf   = 130
+bins_hmf   = 50
 true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
 
 
@@ -68,7 +68,7 @@ hist, bin_edges_X, bin_edges_Y, binnumbers = \
 # prepare for for loop, reverse order...
 # smoothing here (before the for loop below) is totally forbidden, since it would change the values inside
 hist        = np.rot90(hist)
-hist = nd.gaussian_filter(hist, sigma=2)
+hist = nd.gaussian_filter(hist, sigma=1)
 print(np.asarray([max(x) for x in hist]).sum(), true_counts.sum())   # all good!
 
 
@@ -103,7 +103,7 @@ print(Pv, markers)
 
 
 
-plt.figure(figsize=(6, 2.75))
+plt.figure(figsize=(6, 5.75))
 for pv, mv, mar in zip(Pv, Mv, markers):
     if mar=='d':
         plt.scatter(mv, pv, marker=mar, color='purple', edgecolors='k')
@@ -118,7 +118,7 @@ xx, yy = np.meshgrid(np.arange(hist.shape[1]), np.arange(hist.shape[0]))
 
 
 # Plot 4: x = contour_thresholds, y = proto halo masses, z = intersection counts
-f, ax = plt.subplots()
+f, ax = plt.subplots(figsize=(7,7))
 im = ax.imshow(hist, cmap='bone')
 cb = colorbar(mappable=im, colorbar_label='Occurences')
 cb.ax.plot([0, 1], [25 * 1.0/hist.max(), 25 * 1.0/hist.max()], color='darkred', linestyle='-', linewidth=2)
