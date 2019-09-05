@@ -9,12 +9,12 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 
-sim = 'A'
-
+sim = 'T'
+"""
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
-"""
+
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
@@ -68,7 +68,7 @@ hist, bin_edges_X, bin_edges_Y, binnumbers = \
 # prepare for for loop, reverse order...
 # smoothing here (before the for loop below) is totally forbidden, since it would change the values inside
 hist        = np.rot90(hist)
-hist = nd.gaussian_filter(hist, sigma=1)
+hist = nd.gaussian_filter(hist, sigma=0.5)
 print(np.asarray([max(x) for x in hist]).sum(), true_counts.sum())   # all good!
 
 
