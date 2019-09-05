@@ -1,6 +1,14 @@
 import numpy as np, os
 import scipy.ndimage as nd
 from analysis.helpers.plotting_help import *
+import matplotlib.cm as cm
+
+viridis = cm.get_cmap('viridis')
+values = [viridis(x) for x in np.linspace(0, 1, 100)]
+values[0] = (1, 1, 1, 1)    # set the first value to white
+from matplotlib.colors import LinearSegmentedColormap
+cm = LinearSegmentedColormap.from_list('mycmap', values)
+
 
 def colorbar(mappable, colorbar_label):
     #from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -32,7 +40,7 @@ for u in un:
 labels[mass_mask] = 0
 
 fig, ax = plt.subplots(figsize=(8, 8))
-im1 = ax.imshow(labels)
+im1 = ax.imshow(labels, cmap=cm)
 ax.set(xlabel='x [cells]', ylabel='y [cells]', xticks=[0, 128, 256, 384, 512], yticks=[0, 128, 256, 384, 512])
 
 plt.savefig('label_slice.png', dpi=300)
