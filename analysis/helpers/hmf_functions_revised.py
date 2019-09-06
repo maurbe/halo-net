@@ -5,7 +5,7 @@ from skimage.morphology import label, watershed, extrema
 
 def f(mean_distances, raw_masses):
 
-    def fit(m):
+    def fit(p):
         X = 3.75
         x0 = 3.9
         x1 = 4.95
@@ -16,8 +16,7 @@ def f(mean_distances, raw_masses):
         y1 = 3.5
         y2 = 5.6
 
-        p=m
-        if p < X:
+        if p < x0:
             s = (y0 - Y) / (x0 - X)
             q = y0 - s * x0
             return s * p + q
@@ -165,7 +164,7 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 50)
+    thresholds          = np.linspace(0, 1, 30)
     peak_vals           = []
     masses              = []
 
