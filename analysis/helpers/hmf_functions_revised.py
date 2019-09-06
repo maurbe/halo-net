@@ -25,10 +25,12 @@ def f(mean_distances, raw_masses):
             s = (y1 - y0) / (x1 - x0)
             q = y1 - s * x1
             return s * p + q
-        else:
+        else:# p < x2:
             s = (y2 - y1) / (x2 - x1)
             q = y2 - s * x2
             return s * p + q
+        #else:
+        #    return 5.6
 
     x = np.linspace(0.5, 5.75, 1e3)
     y = np.asarray([fit(m) for m in x])

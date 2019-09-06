@@ -10,7 +10,7 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 sim = 'T'
-
+"""
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
@@ -18,20 +18,20 @@ raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predic
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
-
+"""
 raw_masses = np.load('raw_masses.npy')
 peak_vals = np.load('peak_vals.npy')
 
 where_are_NaNs = np.isnan(peak_vals)
 peak_vals[where_are_NaNs] = 0
-
+"""
 plt.figure()
 for trajectory, rm in zip(peak_vals, raw_masses):
     plt.semilogy(trajectory, rm, linewidth=0.5)
 
 plt.figure()
 print(raw_masses.shape, peak_vals.shape)
-
+"""
 log_masses = np.log10(raw_masses)
 
 
