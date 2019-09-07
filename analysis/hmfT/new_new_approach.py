@@ -56,7 +56,7 @@ halo_sizes = data['nr_part'].values
 halo_sizes = halo_sizes[halo_sizes>=16*285]
 print('gt no. of halos', len(halo_sizes))
 halo_sizes = np.log10(halo_sizes)
-bins_hmf   = 50 #log_masses.shape[1] # should be same as final hmf
+bins_hmf   = log_masses.shape[1] # should be same as final hmf
 true_counts, bin_edges_Y = plt.hist(halo_sizes, bins=bins_hmf)[0:2]
 
 
@@ -74,6 +74,7 @@ markers = []
 hist = scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count',
                                        bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)[0]
 hist = np.rot90(hist)
+hist = nd.gaussian_filter(hist, sigma=1)
 TOTAL_HIST = hist.copy()
 
 for j in trange(len(hist)):
@@ -106,7 +107,7 @@ for j in trange(len(hist)):
         H[H>0] = 1
 
         if H[j, index_of_best_fit]==1:
-            peak_vals[k] = None
+            peak_vals[k] = np.nan
             c+=1
     print(c)
 
@@ -116,6 +117,7 @@ for j in trange(len(hist)):
     Y = np.asarray([y for sub in log_masses for y in sub])
     hist = scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count', bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)[0]
     hist = np.rot90(hist)
+    hist = nd.gaussian_filter(hist, sigma=1)
 
 plt.figure()
 plt.imshow(hist, cmap='bone')
