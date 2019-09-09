@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import scipy.ndimage as nd
 from matplotlib.colors import colorConverter
 from matplotlib.patches import Circle
+from analysis.helpers.hmf_functions_revised import overplot_helper
 
 def sselector(z):
-    return (z > 0) & (z < 100)
+    return (z > 100) & (z < 150)
 def linear_kernel(Rs):
     r2 = np.arange(-round(Rs), round(Rs) + 1) ** 2
     dist2 = r2[:, None] + r2[:]
@@ -101,7 +102,7 @@ for i, hid in enumerate(halo_particle_ids_grouped):
 X_COM = ((np.asarray(X_COM) + 0.5) * 512).astype(int)
 Y_COM = ((np.asarray(Y_COM) + 0.5) * 512).astype(int)
 Z_COM = ((np.asarray(Z_COM) + 0.5) * 512).astype(int)
-RADII = (3.0 / (4.0*np.pi) * halo_sizes_grouped)**(1.0/3.0) / 1.5    # 1.5 solely for visually keeping the circles small
+RADII = (3.0 / (4.0*np.pi) * halo_sizes_grouped)**(1.0/3.0) / 1.0    # 1.5 solely for visually keeping the circles small
 print('No. of gt proto halos:', len(RADII))
 print('No. of gt proto halos in selected slice:', len(RADII[sselector(Z_COM)]), '\n')
 
@@ -123,8 +124,16 @@ plt.show()
 """
 
 
-labels_pred = np.load('src/periodic_labels_predictedT.npy')
+
+
 dist_p  = np.load(homedir + '/boxesT/predictionT.npy')
+"""
+labels_pred = overplot_helper(distance=dist_p)
+np.save('predicted_labels_for_overplot.npy', labels_pred)
+"""
+
+dist_p = np.pad(dist_p, pad_width=64, mode='wrap')
+labels_pred = np.load('predicted_labels_for_overplot.npy')
 un, inv, counts = np.unique(labels_pred, return_inverse=True, return_counts=True)
 print(len(un))
 print((counts>=8*285).sum()) # BACKGROUND IS STILL INSIDE!
@@ -155,6 +164,11 @@ for u, slice3d in zip(un[1:], isolated_regions):
                              indices_of_peak_value[1] + slice3d[1].start,
                              indices_of_peak_value[2] + slice3d[2].start)
     assert labels_pred[indices_of_peak_value] == u
+    # now perform the filtering
+    if mass_labels[indices_of_peak_value] >= 16 * 285:
+        peak_inds.append(indices_of_peak_value)
+        assigned_radii.append((3.0 / (4.0 * np.pi) * mass_labels[indices_of_peak_value]) ** (
+                    1.0 / 3.0) / 1.0)  # 1.5 solely for visually keeping the circles small
 
 
 peak_inds = np.asarray(peak_inds)
@@ -162,13 +176,14 @@ assigned_radii = np.asarray(assigned_radii)
 
 max_X, max_Y, max_Z = peak_inds[:, 0], peak_inds[:, 1], peak_inds[:, 2]
 print('No. of pred. proto halos:', len(assigned_radii))
-print('No. of pred. proto halos in selected slice:', len(assigned_radii[sselector(max_Z)]))
+print('No. of pred. proto halos in selected slice:', len(assigned_radii[sselector(max_Z-64)]))
+# REMOVE THE PAD-WIDTH OF 64 -> -64
 # .....................................................................
 
 
 # Plotting ............................................................
 fig, ax = plt.subplots(1, figsize=(8, 8))
-ax.imshow(heatmap_gt, zorder=0, cmap='bone_r')
+ax.imshow(np.pad(heatmap_gt, pad_width=64, mode='wrap'), zorder=0, cmap='bone_r') # heatmap_gt
 
 #my_blue = colorConverter.to_rgba('#1C6CAB', alpha=0.2)
 #for xx, yy, rr in zip(X_COM[sselector(Z_COM)],
@@ -178,9 +193,9 @@ ax.imshow(heatmap_gt, zorder=0, cmap='bone_r')
 #    ax.add_patch(circ)
 
 my_orange = colorConverter.to_rgba('#F8512C', alpha=0.2)
-for xx, yy, rr in zip(max_X[sselector(max_Z)],
-                      max_Y[sselector(max_Z)],
-                      assigned_radii[sselector(max_Z)]):
+for xx, yy, rr in zip(max_X[sselector(max_Z-64)],
+                      max_Y[sselector(max_Z-64)],
+                      assigned_radii[sselector(max_Z-64)]):
     circ = Circle((yy, xx), radius=rr, edgecolor='#F8512C', linewidth=1.5, facecolor=my_orange)
     ax.add_patch(circ)
 

@@ -11,7 +11,7 @@ from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
 
 sim = 'T'
-"""
+
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
@@ -19,7 +19,7 @@ raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predic
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
-"""
+
 raw_masses = np.load('raw_masses.npy')
 peak_vals = np.load('peak_vals.npy')
 
@@ -74,25 +74,39 @@ markers = []
 hist = scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count',
                                        bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)[0]
 hist = np.rot90(hist)
-hist = nd.gaussian_filter(hist, sigma=1)
+#hist = nd.gaussian_filter(hist, sigma=1)
 TOTAL_HIST = hist.copy()
+
 
 for j in trange(len(hist)):
 
     line = hist[j]
+    """
+    plt.figure()
+    plt.imshow(hist, cmap='bone', vmin=0, vmax=1)
+    plt.figure()
+    plt.imshow(line[np.newaxis, :], cmap='bone', vmin=0, vmax=1)
+    plt.show()
+    """
     tc = true_counts[::-1][j]
 
-    index_of_best_fit = np.argmin(abs(line - tc) )
+    #index_of_best_fit = np.argmin(abs(line - tc) )
+    indices_of_best_fit = np.argsort(abs(line-tc))[:2]
+    if len(indices_of_best_fit)==0:
+        continue
 
-    diffs.append(np.min(abs(line - tc)))
-    Pv.append(peak_vals[j, index_of_best_fit])
-    Mv.append(bin_edges_Y[::-1][j])
-    index_pairs_of_dots.append([index_of_best_fit, j])
-    if hist[j, index_of_best_fit] < 10:
-        markers.append('d')
-    else:
-        markers.append('o')
+    for id in indices_of_best_fit:
 
+        diffs.append(np.min(abs(line - tc)))
+        Pv.append(peak_vals[j, id])
+        Mv.append(bin_edges_Y[::-1][j])
+        index_pairs_of_dots.append([id, j])
+        if hist[j, id] < 10:
+            markers.append('d')
+        else:
+            markers.append('o')
+
+    """
     # now remove the lines that were used and redo the histogramming
     #print(peak_vals.shape)
     c=0
@@ -106,7 +120,7 @@ for j in trange(len(hist)):
         H = np.rot90(H)
         H[H>0] = 1
 
-        if H[j, index_of_best_fit]==1:
+        if H[j, indices_of_best_fit[0]]==1:
             peak_vals[k] = np.nan
             c+=1
     print(c)
@@ -117,10 +131,10 @@ for j in trange(len(hist)):
     Y = np.asarray([y for sub in log_masses for y in sub])
     hist = scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count', bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)[0]
     hist = np.rot90(hist)
-    hist = nd.gaussian_filter(hist, sigma=1)
-
+    #hist = nd.gaussian_filter(hist, sigma=1)
+    """
 plt.figure()
-plt.imshow(hist, cmap='bone')
+plt.imshow(hist, cmap='bone', interpolation='nearest')
 
 plt.figure()
 for trajectory, rm in zip(peak_vals, raw_masses):
@@ -128,7 +142,6 @@ for trajectory, rm in zip(peak_vals, raw_masses):
 
 print(diffs)
 print(Pv, markers)
-#plt.show()
 
 
 
@@ -180,7 +193,7 @@ def fit_M(x):
     y2 = 5.6
 
     for p in x:
-        if p < x0:
+        if p < X:
             s = (y0 - Y) / (x0 - X)
             q = y0 - s * x0
             m.append(s*p+q)

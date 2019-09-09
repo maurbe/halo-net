@@ -19,7 +19,6 @@ ps_pred = np.log10(ps_pred)
 print('Number of proto halos after thresholding:', len(ps_pred))
 
 
-
 all_sets = np.hstack((ps_pred, halo_sizes))
 no_bins = 20
 bins = np.histogram(all_sets, range=(all_sets.min(), all_sets.max()), bins=no_bins)[1]
@@ -80,3 +79,19 @@ ax2.set_ylim((-1.0, 1.0))
 ax2.set_yticks([-1.0, -0.5, -0.1, 0.1, 0.5, 1.0])
 plt.savefig('hmfT.png', dpi=300)
 plt.show()
+
+"""
+import yt
+from yt.analysis_modules.halo_mass_function.api import *
+ds0 = yt.load(projectdir+'source/simT/wmap5almostlucie512.std')
+hmf = HaloMassFcn(simulation_ds=ds0,
+                  this_redshift=0,
+                  log_mass_min=12.6,
+                  log_mass_max=14.5,
+                  num_sigma_bins=20,
+                  fitting_function=1)
+ax.plot(np.log10(hmf.masses_analytic),
+        np.log10(hmf.n_cumulative_analytic * ((100/0.71)**3)),
+        'k-.')
+
+"""

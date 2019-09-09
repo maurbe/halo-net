@@ -8,3 +8,8 @@ runs
 *.h5
 *.hdf5
 *.pkl
+analysis/hmfT/overlay_new.png
+source/analytical_fit.py
+unet/run_1/history/
+unet/run_1/live_output/
+unet/run_1/log/

@@ -48,6 +48,54 @@ def f(mean_distances, raw_masses):
     #plt.show()
     return index
 
+def overplot_helper(distance, pw=64):
+
+    # step 1: expand the domain periodically
+    distance    = np.pad(distance, pad_width=pw, mode='wrap')
+    image       = distance > 0
+
+
+    # step 2: identify the maxima and the maxima inside original domain
+    distance    = nd.gaussian_filter(distance, sigma=1, mode='wrap')
+    h_maxima    = extrema.h_maxima(distance, h=0.05)
+
+    # step 3: watershed segmentation; unfortunately have to do it for all maxima (not just 'in') and then filter
+    labels_ws   = watershed(-distance, markers=label(h_maxima), mask=image, watershed_line=False)
+    return labels_ws
+    """
+    # step 2: peak-to-threshold correction
+    corrected_regions = np.zeros_like(labels_ws)
+    filtered_regions = nd.find_objects(labels_ws)
+
+    from tqdm import tqdm
+    for k, region in enumerate(tqdm(filtered_regions)):
+        id = k + 1
+
+        mask = labels_ws[region] == id
+        uncorrected_mass = []
+        peak_value = []
+
+        thresholds = np.linspace(0.0, 1.0, 50)
+
+        for t in thresholds:
+            adjusted_mask = distance[region] >= t
+            combined_mask = np.logical_and(adjusted_mask, mask)
+
+            uncorrected_mass.append(combined_mask.sum())
+            peak_value.append(np.mean(uncorrected_mass[-1] ** (1. / 3.) / 4.0 * distance[region][combined_mask]))
+        index = f(peak_value, uncorrected_mass)
+        threshold = thresholds[index]
+        adjusted_mask = distance[region] >= threshold
+
+        corrected_regions[region] += id * np.logical_and(adjusted_mask, mask)
+
+    # step 3: return 3 things:
+    # 1) corrected_regions (holding unique labels for each unique region)
+    # 2) peak_values (float) of each region
+    # 3) corrected size (int) of each region
+    return corrected_regions
+    """
+
 
 def mainfunction(distance, pw=64):
 
@@ -121,7 +169,7 @@ def retrieve_corrected_regions(distance, sim, preload=True):
         uncorrected_mass= []
         peak_value      = []
 
-        thresholds = np.linspace(0.0, 1.0, 50)
+        thresholds = np.linspace(0.0, 1.0, 20)
 
         for t in thresholds:
             adjusted_mask = distance[region] >= t
@@ -164,7 +212,7 @@ def find_peak_to_thresh_relation(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 100)
+    thresholds          = np.linspace(0, 1, 20)
     peak_vals           = []
     masses              = []
 
