@@ -8,10 +8,20 @@ import scipy.ndimage as nd
 from matplotlib.colors import LogNorm
 from analysis.helpers.hmf_functions_revised import find_peak_to_thresh_relation
 
+def colorbar(mappable, colorbar_label):
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    ax = mappable.axes
+    fig = ax.figure
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="3%", pad=0.02)
+    return fig.colorbar(mappable, cax=cax, label=colorbar_label)
+
+
+
 
 
 sim = 'T'
-
+"""
 homedir = os.path.dirname(os.getcwd()) + '/'
 predicted_distances = np.load(homedir + 'boxes'+sim+'/prediction'+sim+'.npy')
 raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predicted_distances, sim=sim, homedir=homedir)
@@ -19,7 +29,7 @@ raw_masses, peak_vals, contour_fs = find_peak_to_thresh_relation(distance=predic
 np.save('raw_masses.npy', raw_masses)
 np.save('peak_vals.npy', peak_vals)
 np.save('contour_fs.npy', contour_fs)
-
+"""
 raw_masses = np.load('raw_masses.npy')
 peak_vals = np.load('peak_vals.npy')
 
@@ -34,14 +44,10 @@ print('regarding the sorting, everything seems fine!')
 plt.figure()
 log_masses = np.log10(raw_masses)
 
+print(raw_masses.min(), raw_masses.max())
+print(log_masses.min(), log_masses.max())
 
-def colorbar(mappable, colorbar_label):
-    from mpl_toolkits.axes_grid1 import make_axes_locatable
-    ax = mappable.axes
-    fig = ax.figure
-    divider = make_axes_locatable(ax)
-    cax = divider.append_axes("right", size="3%", pad=0.02)
-    return fig.colorbar(mappable, cax=cax, label=colorbar_label)
+
 
 
 #P = np.asarray([p for sub in peak_vals for p in sub])
@@ -77,10 +83,9 @@ hist = np.rot90(hist)
 #hist = nd.gaussian_filter(hist, sigma=1)
 TOTAL_HIST = hist.copy()
 
-
 for j in trange(len(hist)):
 
-    line = hist[j]
+    line = hist[::-1][j]
     """
     plt.figure()
     plt.imshow(hist, cmap='bone', vmin=0, vmax=1)
@@ -88,10 +93,10 @@ for j in trange(len(hist)):
     plt.imshow(line[np.newaxis, :], cmap='bone', vmin=0, vmax=1)
     plt.show()
     """
-    tc = true_counts[::-1][j]
+    tc = true_counts[j]
 
     #index_of_best_fit = np.argmin(abs(line - tc) )
-    indices_of_best_fit = np.argsort(abs(line-tc))[:2]
+    indices_of_best_fit = [max(np.argsort(abs(line-tc))[:2])] # max() to get the one more on the right...
     if len(indices_of_best_fit)==0:
         continue
 
@@ -100,13 +105,12 @@ for j in trange(len(hist)):
         diffs.append(np.min(abs(line - tc)))
         Pv.append(peak_vals[j, id])
         Mv.append(bin_edges_Y[::-1][j])
-        index_pairs_of_dots.append([id, j])
-        if hist[j, id] < 10:
+        index_pairs_of_dots.append([id, len(hist)-j-1])
+        if line[id] < 10:
             markers.append('d')
         else:
             markers.append('o')
 
-    """
     # now remove the lines that were used and redo the histogramming
     #print(peak_vals.shape)
     c=0
@@ -132,7 +136,7 @@ for j in trange(len(hist)):
     hist = scipy.stats.binned_statistic_2d(x=X, y=Y, values=None, statistic='count', bins=[bin_edges_X, bin_edges_Y], expand_binnumbers=True)[0]
     hist = np.rot90(hist)
     #hist = nd.gaussian_filter(hist, sigma=1)
-    """
+
 plt.figure()
 plt.imshow(hist, cmap='bone', interpolation='nearest')
 
@@ -165,14 +169,15 @@ xx, yy = np.meshgrid(np.arange(TOTAL_HIST.shape[1]), np.arange(TOTAL_HIST.shape[
 
 # Plot 4: x = contour_thresholds, y = proto halo masses, z = intersection counts
 f, ax = plt.subplots(figsize=(7,7))
-im = ax.imshow(TOTAL_HIST, cmap='bone')
+im = ax.imshow(TOTAL_HIST, cmap='twilight_shifted')
 cb = colorbar(mappable=im, colorbar_label='Occurences')
 cb.ax.plot([0, 1], [25 * 1.0/TOTAL_HIST.max(), 25 * 1.0/TOTAL_HIST.max()], color='darkred', linestyle='-', linewidth=2)
 ax.contour(xx, yy, TOTAL_HIST, levels=[25], colors=['darkred'])
-ax.set(xticks = np.arange(0, len(bin_edges_X[:-1]))[::3], xticklabels = np.round(bin_edges_X[:-1][::3], 2),
-       yticks = np.arange(0, len(bin_edges_Y[::-1][:-1]))[::2], yticklabels = np.round(bin_edges_Y[::-1][:-1][::2] - np.log10(64.0/5.66e10), 1), # second term: conversion from number of particles to real mass
+ax.set(xticks = np.arange(0, len(bin_edges_X[:-1]))[::3], xticklabels = np.round(bin_edges_X[:-1][::3], 3),
+       yticks = np.arange(0, len(bin_edges_Y[::-1][:-1]))[::2], yticklabels = np.round(bin_edges_Y[::-1][:-1][::2] - np.log10(64.0/5.66e10), 3), # second term: conversion from number of particles to real mass
        #xlim = ((0, len(bin_edges_X[:-20]))),
        xlabel = 'mean dist', ylabel = r'$\log_{10}(\mathrm{M/M}_{\odot})$')
+ax.set_xticklabels( np.round(bin_edges_X[:-1][::3], 3), rotation = 45, ha="right")
 
 for points, mar in zip(index_pairs_of_dots, markers):
     if mar=='d':
@@ -180,10 +185,14 @@ for points, mar in zip(index_pairs_of_dots, markers):
     else:
         ax.scatter(points[0], points[1], marker=mar, color='cornflowerblue', edgecolors='k', zorder=3)
 
+
+
+
+
 def fit_M(x):
     m = []
     X = 3.75
-    x0 = 4.05
+    x0 = 3.90
     x1 = 4.95
     x2 = 5.65
 
@@ -194,7 +203,7 @@ def fit_M(x):
 
     for p in x:
         if p < X:
-            s = (y0 - Y) / (x0 - X)
+            s = (y0-Y) / (x0 - X)
             q = y0 - s * x0
             m.append(s*p+q)
         elif p < x1:
