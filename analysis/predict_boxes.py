@@ -6,10 +6,11 @@ from unet.generator.datagen import custom_DataGenerator
 def predict_and_stitch(datapath):
     """
     Main function to call
-    :param datapath:    data path to the sets (x,y)
-    :return:            stitched cube of original dimensions (e.g. 512^3)
-    Todo:               investigate if there is a better technique of stitching the boxes together,
-                        e.g. take mean values where subboxes overlap (opposed to "hard" stitching of innermost subboxes)
+    :param datapath:    Data path to the sets (x,y)
+    :return:            Stitched cube of original dimensions (e.g. 512^3)
+    :comment:           The script "predict_boxes_sliding_window.py" implements a sliding window with overlap where the
+                        maximum values where subboxes overlap are taken (opposed to "hard" stitching of innermost subboxes).
+                        However, I find that that code is more expensive and yields worse results.
     """
     input_shape = (128, 128, 128, 1)
     subbox_ids = np.arange(0, 512, 1)

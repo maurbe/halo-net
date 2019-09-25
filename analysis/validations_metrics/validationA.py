@@ -1,27 +1,18 @@
 """
-    Code to visualize input, ground truth, prediction and difference for network predictions of the validation set.
+    Purpose:    Code to visualize input, ground truth, prediction and residual
+                for network predictions of the validation set (A).
 """
-import numpy as np, glob
-import os, json
 
-from unet.helpers.plotting_help import *
+import os, json, glob
+
+from analysis.helpers.plotting_help import *
 from unet.network.u_net import get_model
-from unet.metrics.custom_metrics import selective_mse, selective_r2_score, r2_score
+from unet.metrics.custom_metrics import selective_mae_normalized
 from unet.generator.datagen import custom_DataGenerator
 
-from matplotlib.colors import LinearSegmentedColormap
-mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#6067B3',
-                                                     #   '#969CCA',
-                                                     '#6067B3', '#5C3C9A', '#45175D', '#2F1435',
-                                                     '#601A49', '#8C2E50', '#A14250',
-                                                     '#B86759',
-                                                     '#E0D9E1'][::-1])
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
-
-mcmap = 'twilight_r'
-
 input_shape = (128, 128, 128, 1)
-test_ids  = np.arange(181, 200, 3)  # I especially like 225, 375, 435, 440, 136, 443
+test_ids  = np.arange(381, 400, 3)  # I especially like 225, 375, 435, 440, 136, 443
 datagen_params_test = {'dim': input_shape[0],
                        'mode': 'full',
                        'datapath': projectdir + 'source/setsA/validationA/',
@@ -37,10 +28,7 @@ net = get_model(**param_dict)
 latest_weights = max(glob.glob(projectdir + 'unet/run_1/saved_networks/*.hdf5'), key=os.path.getctime)
 print('Loaded latest weights:', latest_weights)
 net.load_weights(latest_weights)
-
-net.compile('adam', loss=selective_mse, metrics=['mse',
-                                                 selective_r2_score,
-                                                 r2_score])
+net.compile('adam', loss=selective_mae_normalized)
 #eval = net.evaluate_generator(generator=testing_generator, verbose=True)
 #print '\n', eval, '\n'
 
@@ -59,14 +47,16 @@ for ti, prediction in zip(test_ids, Prediction):
     xi = x[:, :, 50, 0]
     yi = y[:, :, 50, 0]
     pi = prediction[:, :, 50, 0]
+    res = yi - pi
 
     im0 = axes[0].imshow(xi, cmap='magma', vmin=-3, vmax=3)
-    im1 = axes[1].imshow(yi, cmap=mcmap, vmin=0.0, vmax=1.0)
-    im2 = axes[2].imshow(pi, cmap=mcmap, vmin=0.0, vmax=1.0)
-    im3 = axes[3].imshow(yi-pi, cmap='seismic')
+    im1 = axes[1].imshow(yi, cmap='twilight_r', vmin=0.0, vmax=1.0)
+    im2 = axes[2].imshow(pi, cmap='twilight_r', vmin=0.0, vmax=1.0)
+    im3 = axes[3].imshow(res, cmap='twilight_shifted_r', clim=(res.min(), res.max()),
+                         norm=MidpointNormalize(midpoint=0.0, vmin=res.min(), vmax=res.max()))
 
     for ax, im, title in zip(axes, [im0, im1, im2, im3], ['Input density contrast', 'Ground truth', 'Prediction', 'Residual']):
-        ax.add_patch(matplotlib.patches.Rectangle((16, 16), 96, 96, linewidth=0.4, edgecolor='lightgreen', facecolor='none'))
+        ax.add_patch(matplotlib.patches.Rectangle((16, 16), 96, 96, linewidth=0.8, edgecolor='k', facecolor='none'))
         ax.set_title(title)
         colorbar(im)
 

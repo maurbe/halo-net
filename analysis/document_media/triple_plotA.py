@@ -1,10 +1,9 @@
 """
-    Triple plot of input, target and prediction.
-    Use the 8x285 case here, since we are primarily interested in those halos...
-    Do not (!) "correct" for the mean, nor do a smoothing!
+    Purpose:    Triple plot of input, target and prediction without any inset.
+    Comment:    Do not (!) correct for the mean, nor do a smoothing!
 """
 
-import numpy as np, os
+import os
 from analysis.helpers.plotting_help import *
 
 def colorbar(mappable, colorbar_label):

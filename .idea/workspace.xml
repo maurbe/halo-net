@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="">
+    <list default="true" id="3f076db6-8552-4fdc-9b63-7bf25a9cbc79" name="Default Changelist" comment="Version 2.0&#10;+ massively updated all scripts and entire project&#10;- todo: rewrite of overplot_helper for incorporating mass correction">
+      <change afterPath="$PROJECT_DIR$/analysis/configurations/temp_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/flyby.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/tiles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/tiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/triple_plotA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/triple_plotA_inset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/triples/triple_good.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/triples/triple_merger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/document_media/triples/triple_separator.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfA/correction_src/fitA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfA/get_sizes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfA/identify_correction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfT/correction_src/fitT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfT/get_sizes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/hmfT/identify_correction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/predict_boxes_max_stitching.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/validations_metrics/metricsA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/validations_metrics/metricsT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/validations_metrics/validationA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/validations_metrics/validationT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/analyze_boxes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-04 um 00.15.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-04 um 00.15.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-04 um 00.48.01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-04 um 00.48.09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-05 um 17.24.42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/configrations/Bildschirmfoto 2019-09-05 um 17.24.50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/contoursplot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/dcnsdjcwd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/flyby.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/tiles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/tiles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_good.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_merger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_plotA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_plotA_inset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/document_plots/triple_separator.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/dsc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/dxaa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/get_proto_sizes_DEBUG.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/get_sizes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/helpers/plotting_help.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/helpers/plotting_help.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/find_peak_thresh_relation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/hist2D.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/analysis/hmfA/hmfA.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfA/hmfA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/linear_fit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/peak_thresh_src/tets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfA/sdcsa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/hist2D.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/analysis/hmfT/hmfT.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/hmfT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/hmfT/new_new_approach.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/new_new_approach.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/talk_IC_BU.key" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/talk_IC_BU.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/linear_fit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/new_approach.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/new_new_approach.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/newnewnew.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/overplotT.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/hmfT/overplotT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/peak_thresh_src/tets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/hmfT/sdcsa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/loss_plots/descents.png" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/loss_plots/descents.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/loss_plots/plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/loss_plots/plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/predict_boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/predict_boxes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/predict_boxes_sliding_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validations_metricsA/metricsA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validations_metricsA/validating_on_validationA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validations_metricsT/metricsT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/validations_metricsT/validating_on_trainingT.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,32 +144,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>print</find>
-      <find>save_folder</find>
-      <find>saved</find>
-      <find>hist</find>
-      <find>mosaic</find>
-      <find>64</find>
-      <find>cvi</find>
-      <find>image</find>
-      <find>Peak</find>
-      <find>fit</find>
-      <find>proto</find>
-      <find>Proto</find>
-      <find>16</find>
-      <find>Occure</find>
-      <find>contour_fs</find>
-      <find>Mean Pea</find>
-      <find>cube</find>
-      <find>figure</find>
-      <find>bone</find>
-      <find>Occu</find>
-      <find>fit_M</find>
-      <find>hot</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -114,11 +151,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="add_unversioned_files" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -145,8 +183,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_final_hmf (1)">
-    <configuration name="get_final_hmf (1)" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+  <component name="RunManager" selected="Python.overplotT">
+    <configuration name="get_final_hmf (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -168,7 +206,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_final_hmf" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+    <configuration name="get_sizes (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfA/get_sizes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="identify_correction (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Biotop2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfA/identify_correction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="identify_correction" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,7 +263,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/get_final_hmf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/identify_correction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,29 +272,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_sizes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/get_sizes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="new_new_approach" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="overplotT" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Biotop2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,29 +285,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/new_new_approach.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="newnewnew" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="Biotop2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analysis/hmfT" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/newnewnew.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis/hmfT/overplotT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,19 +295,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.get_final_hmf" />
-      <item itemvalue="Python.get_sizes" />
-      <item itemvalue="Python.newnewnew" />
+      <item itemvalue="Python.get_sizes (1)" />
       <item itemvalue="Python.get_final_hmf (1)" />
-      <item itemvalue="Python.new_new_approach" />
+      <item itemvalue="Python.identify_correction" />
+      <item itemvalue="Python.identify_correction (1)" />
+      <item itemvalue="Python.overplotT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.overplotT" />
+        <item itemvalue="Python.identify_correction (1)" />
+        <item itemvalue="Python.identify_correction" />
         <item itemvalue="Python.get_final_hmf (1)" />
-        <item itemvalue="Python.get_final_hmf" />
-        <item itemvalue="Python.get_sizes" />
-        <item itemvalue="Python.new_new_approach" />
-        <item itemvalue="Python.newnewnew" />
+        <item itemvalue="Python.get_sizes (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -331,6 +369,10 @@
       <workItem from="1567949422580" duration="370000" />
       <workItem from="1568030824689" duration="23954000" />
       <workItem from="1568198039418" duration="5474000" />
+      <workItem from="1568794558003" duration="3000" />
+      <workItem from="1568802228332" duration="507000" />
+      <workItem from="1568802914706" duration="691000" />
+      <workItem from="1569229090136" duration="41674000" />
     </task>
     <task id="LOCAL-00001" summary="Updated run-script">
       <created>1566218450052</created>
@@ -511,7 +553,8 @@
     <MESSAGE value="Started reworking the analysis section&#10;+ changed the way of how the adaptive element works:&#10;  trace mean(dist)*mass vs mass&#10; + started revising the overplot" />
     <MESSAGE value="Found better configuration for adaptive watershed&#10;+ started with overplot" />
     <MESSAGE value="Found better configuration for adaptive watershed&#10;+ started with overplot&#10;+ removing of already used trajectories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Found better configuration for adaptive watershed&#10;+ started with overplot&#10;+ removing of already used trajectories" />
+    <MESSAGE value="Version 2.0&#10;+ massively updated all scripts and entire project&#10;- todo: rewrite of overplot_helper for incorporating mass correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0&#10;+ massively updated all scripts and entire project&#10;- todo: rewrite of overplot_helper for incorporating mass correction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -522,99 +565,40 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/predict_boxes_sliding_window.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/analysis/document_plots/triple_plotA.py</url>
-          <line>33</line>
+          <line>32</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfA/find_peak_thresh_relation.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfA/find_peak_thresh_relation.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py</url>
-          <line>278</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py</url>
-          <line>285</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py</url>
-          <line>254</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/find_peak_thresh_relation.py</url>
-          <line>130</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py</url>
-          <line>212</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/new_approach.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/hmfT/new_approach.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py</url>
-          <line>232</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/analysis/helpers/hmf_functions_revised.py</url>
-          <line>169</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/analysis/hmfT/overplotT.py</url>
           <line>185</line>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Biotop2$newnewnew.coverage" NAME="newnewnew Coverage Results" MODIFIED="1568208337878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf__1_.coverage" NAME="get_final_hmf (1) Coverage Results" MODIFIED="1568209884769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_sizes.coverage" NAME="get_sizes Coverage Results" MODIFIED="1568209732388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
-    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf.coverage" NAME="get_final_hmf Coverage Results" MODIFIED="1568209829786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$newnewnew.coverage" NAME="newnewnew Coverage Results" MODIFIED="1569352718501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$metricsT__1_.coverage" NAME="metricsT (1) Coverage Results" MODIFIED="1569400853575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metrics" />
+    <SUITE FILE_PATH="coverage/Biotop2$plotting_help.coverage" NAME="plotting_help Coverage Results" MODIFIED="1569399642650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/helpers" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_sizes.coverage" NAME="get_sizes Coverage Results" MODIFIED="1569412103172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$find_peak_thresh_relation.coverage" NAME="find_peak_thresh_relation Coverage Results" MODIFIED="1569229180269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$validating_on_trainingT.coverage" NAME="validating_on_trainingT Coverage Results" MODIFIED="1569400030272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metricsT" />
+    <SUITE FILE_PATH="coverage/Biotop2$tiles.coverage" NAME="tiles Coverage Results" MODIFIED="1569404432447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
     <SUITE FILE_PATH="coverage/Biotop2$simple_delta_slice.coverage" NAME="simple_delta_slice Coverage Results" MODIFIED="1568130131538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presentation" />
+    <SUITE FILE_PATH="coverage/Biotop2$identify_correction.coverage" NAME="identify_correction Coverage Results" MODIFIED="1569424668024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$metricsA.coverage" NAME="metricsA Coverage Results" MODIFIED="1569400746160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metrics" />
+    <SUITE FILE_PATH="coverage/Biotop2$metricsT.coverage" NAME="metricsT Coverage Results" MODIFIED="1569400177707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metricsT" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_sizes__1_.coverage" NAME="get_sizes (1) Coverage Results" MODIFIED="1569412307832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
+    <SUITE FILE_PATH="coverage/Biotop2$plots.coverage" NAME="plots Coverage Results" MODIFIED="1569401800111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/loss_plots" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf__1_.coverage" NAME="get_final_hmf (1) Coverage Results" MODIFIED="1569412402891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
+    <SUITE FILE_PATH="coverage/Biotop2$flyby.coverage" NAME="flyby Coverage Results" MODIFIED="1569405958622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
+    <SUITE FILE_PATH="coverage/Biotop2$identify_correction__1_.coverage" NAME="identify_correction (1) Coverage Results" MODIFIED="1569424838121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfA" />
+    <SUITE FILE_PATH="coverage/Biotop2$get_final_hmf.coverage" NAME="get_final_hmf Coverage Results" MODIFIED="1569412291015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$triple_plotA_inset.coverage" NAME="triple_plotA_inset Coverage Results" MODIFIED="1569405418942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/document_plots" />
+    <SUITE FILE_PATH="coverage/Biotop2$validating_on_validationA.coverage" NAME="validating_on_validationA Coverage Results" MODIFIED="1568806001598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/validations_metricsA" />
+    <SUITE FILE_PATH="coverage/Biotop2$histos.coverage" NAME="histos Coverage Results" MODIFIED="1568802631700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/Biotop2$new_new_approach.coverage" NAME="new_new_approach Coverage Results" MODIFIED="1568208764621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
+    <SUITE FILE_PATH="coverage/Biotop2$overplotT.coverage" NAME="overplotT Coverage Results" MODIFIED="1569426310939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis/hmfT" />
   </component>
 </project>

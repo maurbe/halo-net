@@ -1,7 +1,12 @@
-import numpy as np
+"""
+    Purpose:    Display loss (and other metrics) change over training time.
+    Comment:    The selective_r2 has not been normalized in any way.
+"""
+
 from analysis.helpers.plotting_help import *
-from matplotlib.patches import FancyArrowPatch
 from scipy.signal import savgol_filter
+plt.rc('xtick', labelsize='large')
+plt.rc('ytick', labelsize='large')
 
 loss_data = np.loadtxt('loss.csv', skiprows=1, delimiter=',')
 step = loss_data[:, 1]
@@ -37,7 +42,7 @@ ax1.annotate('stop training', xy=(2060, 0.5), xycoords='data', fontsize=12,
                 arrowprops=dict(arrowstyle='-|>, head_width=0.15, head_length=0.3', #linestyle="dashed",
                                 color="k", connectionstyle="angle,angleA=180,angleB=-90,rad=0"))
 ax1.ticklabel_format(axis='y', style='sci', scilimits=(0,0))
-ax1.set_ylabel(r'$L_{1,\mathrm{sel}}$')
+ax1.set_ylabel(r'$L_{1,\mathrm{sel}}$', fontsize=15)
 ax1.legend(loc='upper right', prop={'size': 15}, frameon=False)
 
 
@@ -50,8 +55,8 @@ ax2.annotate('stop training', xy=(2060, 0.6), xycoords='data', fontsize=12,
                 xytext=(1600, 0.4), textcoords='data',
                 arrowprops=dict(arrowstyle='-|>, head_width=0.15, head_length=0.3', #linestyle="dashed",
                                 color="k", connectionstyle="angle,angleA=180,angleB=-90,rad=0"))
-ax2.set_xlabel(r'Iterations')
-ax2.set_ylabel(r'$R^{2}_{\mathrm{sel}}$')
+ax2.set_xlabel(r'Iterations', fontsize=15)
+ax2.set_ylabel(r'$R^{2}_{\mathrm{sel}}$', fontsize=15)
 ax2.legend(loc='lower right', prop={'size': 15}, frameon=False)
 
 plt.savefig('descents.png', dpi=250)

@@ -1,23 +1,17 @@
 """
-    Visualization of slices as seen when "flying" through the 3d data volume.
+    Purpose:    Visualization of slices as seen when "flying" through the 3d data volume.
 """
-import numpy as np, os
+
+import os
 from scipy.ndimage import gaussian_filter
 import matplotlib.animation as animation
 from analysis.helpers.plotting_help import *
 
-from matplotlib.colors import LinearSegmentedColormap
-mcmap = LinearSegmentedColormap.from_list('mycmap', ['#969CCA',
-                                                     '#6067B3', '#5C3C9A', '#45175D', '#2F1435',
-                                                     '#601A49', '#8C2E50', '#A14250',
-                                                     '#B86759',
-                                                     '#E0D9E1'][::-1])
-
 def fly(sim):
     """
     Main function to call
-    :param sim:     simulation/box name
-    :return:        save as *.mp4
+    :param sim:     simulation or box name
+    :return:        save vid as *.mp4
     """
     homedir = os.path.dirname(os.getcwd()) + '/'
     final_box = np.load(homedir + 'boxes' + sim + '/prediction' + sim + '.npy')
@@ -28,8 +22,8 @@ def fly(sim):
     print(true_box.shape)
     print(final_box.shape)
 
-    # should smooth the final_box to get rid of edge effects...
-    final_box = gaussian_filter(final_box, sigma=2, mode='wrap')
+    # could smooth the final_box to get rid of edge effects...
+    # final_box = gaussian_filter(final_box, sigma=0, mode='wrap')
 
     for box, name, cmp, bounds in zip([input_box, true_box, final_box],
                                       ['input_density contrast' + sim, 'ground_truth' + sim, 'prediction' + sim],
@@ -47,9 +41,8 @@ def fly(sim):
             title.set_text('Slice {}'.format(i+1))
             return img, title,
 
-        ani = animation.FuncAnimation(fig, updatefig, frames=box.shape[0],
-                                      interval=1, blit=False)
-        ani.save('movies' + sim + '/{}.mp4'.format(name), fps=15, dpi=200, writer='ffmpeg')
+        ani = animation.FuncAnimation(fig, updatefig, frames=box.shape[0], interval=1, blit=False)
+        ani.save('movies' + '/{}'.format(name) + '.mp4', fps=15, dpi=200, writer='ffmpeg')
 
 fly(sim='T')
 fly(sim='A')

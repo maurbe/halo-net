@@ -1,9 +1,13 @@
-import numpy as np
+"""
+    Purpose:    This is a code snippet to investigate other techniques of stitiching, e.g. taking maximum values where
+                predicted subboxes overlap.
+    Comment:    I find that this "max-stitching" technique is more expensive and yields worse results.
+"""
+
+import numpy as np, json, glob, os
 import scipy.ndimage as nd
 from sklearn.preprocessing import scale
-import json, glob, os
 from unet.network.u_net import get_model
-import matplotlib.pyplot as plt
 
 # re-initialize the trained network
 homedir = os.path.dirname(os.getcwd()) + '/'
@@ -46,35 +50,4 @@ for k in range(17):
             c += 1
 
 box = box[pad_width:-pad_width, pad_width:-pad_width, pad_width:-pad_width]
-np.save('boxesA/prediction_slidingA.npy', box)
-
-"""
-size = 96?
-number_of_sliding_windows_per_dimension = 512 / 99
-
-for i in range(?):
-    current_input = ?[np.newaxis, ..., np.newaxis]
-    current_pred  = net.predict(x=current_input)
-    box[?]        = np.max(np.stack([current_pred[buffer:-buffer, buffer:-buffer, buffer:-buffer],
-                                     box[?]]), axis=0)
-9
-prediction = net.predict(x=delta_scaled[np.newaxis, 0:128, 0:128, 0:128, np.newaxis])
-plt.figure()
-plt.imshow(prediction[0, 50, ..., 0], cmap='twilight_r')
-plt.colorbar()
-plt.show()
-raise SystemExit
-for k in range(8):
-    for j in range(8):
-        for i in range(8):
-            box[i * size: (i + 1) * size, j * size: (j + 1) * size, k * size: (k + 1) * size] = \
-                prediction[c][buffer:-buffer, buffer:-buffer, buffer:-buffer]
-            c += 1
-            print(c)
-
-#box_finalT = predict_and_stitch(datapath='source/setsT/trainingT/')
-#np.save('boxesT/predictionT.npy', box_finalT)
-
-#box_finalA = predict_and_stitch(datapath='source/setsA/validationA/')
-#np.save('boxesA/predictionA.npy', box_finalA)
-"""
+np.save('boxesA/prediction_max_stitchingA.npy', box)
