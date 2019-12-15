@@ -1,0 +1,116 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Wechsler2018,Guo2010}
+\citation{Wechsler2018,Feldmann_2019}
+\citation{Press_Schechter1974}
+\citation{Bond1991}
+\citation{Sheth2001,Reed2003}
+\newlabel{firstpage}{{}{1}{}{Doc-Start}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\citation{Berger2019,Calvo2019,He2018,LucieSmith2018,Zhang2019,Agarwal2018}
+\citation{Krizhevsky2012}
+\citation{Liu2015,Noh2015}
+\citation{Milletari2016,Naylor2019,Isensee2018}
+\citation{Naylor2019}
+\citation{LucieSmith2018}
+\citation{Berger2019}
+\citation{LucieSmith2018}
+\citation{LucieSmith2018}
+\citation{Zhang2019}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Deep Learning for structure identification}{2}{section.2}}
+\newlabel{sec:DL_structure}{{2}{2}{Deep Learning for structure identification}{section.2}{}}
+\citation{pkdgrav2000}
+\citation{Eisenstein1998}
+\citation{Howlett2015}
+\citation{LeCun1998}
+\citation{Naylor2019}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A schematic overview of the entire pipeline. We describe the network mapping and how the training samples of density contrast $\delta $ and EDT (defined in eq. \ref  {eq:distance}) are constructed in section \ref  {sec:DL_structure}. We discuss the network architecture, training strategy and results in section \ref  {sec:NN_implementation}. In section \ref  {sec:dist_to_seg} we introduce the watershed algorithm as a key element in the post-processing of the neural network predictions and describe how the halo mass function is reconstructed.}}{3}{figure.1}}
+\newlabel{fig:pipeline}{{1}{3}{A schematic overview of the entire pipeline. We describe the network mapping and how the training samples of density contrast $\delta $ and EDT (defined in eq. \ref {eq:distance}) are constructed in section \ref {sec:DL_structure}. We discuss the network architecture, training strategy and results in section \ref {sec:NN_implementation}. In section \ref {sec:dist_to_seg} we introduce the watershed algorithm as a key element in the post-processing of the neural network predictions and describe how the halo mass function is reconstructed}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Cosmological N-body simulations}{3}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Formulating the network mapping}{3}{subsection.2.2}}
+\newlabel{sec:network_mapping}{{2.2}{3}{Formulating the network mapping}{subsection.2.2}{}}
+\newlabel{eq:distance}{{2}{3}{Formulating the network mapping}{equation.2}{}}
+\citation{Berger2019}
+\citation{Ronneberger2015}
+\citation{Ronneberger2015}
+\citation{Ronneberger2015}
+\citation{Chollet2015}
+\citation{bengio1994}
+\citation{Srivastava2014}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces An example situation of the target sample generation pipeline. Particles in haloes at $z=0$ are traced back to the initial conditions where the associated halo mass is deposited hierarchically as described in section \ref  {sec:network_mapping}. This results in distinct protohalo regions marked by different colors to better convey individual structures. We then apply the EDT transformation to the entire label image and normalize on an object by object basis to produce the distance map $B_{d,n}$ shown in the third subplot. Also shown in green is the actual and normalized distance value (12 and 1) to the closest background cell for the innermost cell for an example protohalo. Background cells (shown in black) have zero distance. The normalized euclidean distance information conveys that the target map retains individual objects even though distinct patches might be connected.}}{4}{figure.2}}
+\newlabel{fig:overview}{{2}{4}{An example situation of the target sample generation pipeline. Particles in haloes at $z=0$ are traced back to the initial conditions where the associated halo mass is deposited hierarchically as described in section \ref {sec:network_mapping}. This results in distinct protohalo regions marked by different colors to better convey individual structures. We then apply the EDT transformation to the entire label image and normalize on an object by object basis to produce the distance map $B_{d,n}$ shown in the third subplot. Also shown in green is the actual and normalized distance value (12 and 1) to the closest background cell for the innermost cell for an example protohalo. Background cells (shown in black) have zero distance. The normalized euclidean distance information conveys that the target map retains individual objects even though distinct patches might be connected}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Generating synthetic training samples}{4}{subsection.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Neural network implementation}{4}{section.3}}
+\newlabel{sec:NN_implementation}{{3}{4}{Neural network implementation}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}U-net architecture}{4}{subsection.3.1}}
+\citation{Chollet2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A schematic representation of the fully convolutional U-net implementation used for the regression task. The network is constructed by stacking and connecting convolution blocks down to a bottleneck layer, from which the original input dimensions are reconstructed by upsampling the data through deconvolution blocks. The skip connections concatenate the convolution and deconvolution blocks with same dimension in every corresponding network layer. Also shown are the intermediate layer outputs before each convolution block and after each deconvolution block respectively. With each downward step, the dimensions decrease by a factor of 2 due to the MaxPooling operations, whereas in the decoder part the transpose convolutions upsample the dimension again by the same factor of 2.}}{5}{figure.3}}
+\newlabel{fig:network}{{3}{5}{A schematic representation of the fully convolutional U-net implementation used for the regression task. The network is constructed by stacking and connecting convolution blocks down to a bottleneck layer, from which the original input dimensions are reconstructed by upsampling the data through deconvolution blocks. The skip connections concatenate the convolution and deconvolution blocks with same dimension in every corresponding network layer. Also shown are the intermediate layer outputs before each convolution block and after each deconvolution block respectively. With each downward step, the dimensions decrease by a factor of 2 due to the MaxPooling operations, whereas in the decoder part the transpose convolutions upsample the dimension again by the same factor of 2}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary table of all network hyper-parameters and layers for a 5-level version of the U-net with $n_{f}=12$ initial filters and filter size of $(3\times 3\times 3)$ throughout the network. Only \texttt  {Conv3D} and \texttt  {Conv3DT} contain trainable parameters.}}{5}{table.1}}
+\citation{Kornilov2018}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The evolution of the smoothed loss function $\mathaccentV {hat}05E{L}_{1,\text  {sel}}$ for both training and validation simulation over the entire $\sim $2000 training iterations, after which the loss improvements become marginally small and training is stopped. The dropout rate is set to 0.5 throughout the entire training process.}}{6}{figure.4}}
+\newlabel{fig:loss_evolution}{{4}{6}{The evolution of the smoothed loss function $\hat {L}_{1,\text {sel}}$ for both training and validation simulation over the entire $\sim $2000 training iterations, after which the loss improvements become marginally small and training is stopped. The dropout rate is set to 0.5 throughout the entire training process}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Training the neural network}{6}{subsection.3.2}}
+\newlabel{sec:training}{{3.2}{6}{Training the neural network}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}From distance information to segmentation maps}{6}{section.4}}
+\newlabel{sec:dist_to_seg}{{4}{6}{From distance information to segmentation maps}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces An entire slice of the validation box displaying the input density contrast at $z=100$ (left), raw and unprocessed prediction of the neural network (right) and ground truth (middle) of the normalized distance map. Also shown are insets of two regions conveying the performance of the neural network in more detail. In case B the network manages to predict the exact number of distinct clusters as well as a good estimate on the corresponding sizes, whereas case A shows a problematic prediction regarding protohalo identification where a major density patch is split into two sub-structures. This behaviour is unwanted as the reconstructed region will suffer from oversegmentation. }}{7}{figure.5}}
+\newlabel{fig:triple_combined}{{5}{7}{An entire slice of the validation box displaying the input density contrast at $z=100$ (left), raw and unprocessed prediction of the neural network (right) and ground truth (middle) of the normalized distance map. Also shown are insets of two regions conveying the performance of the neural network in more detail. In case B the network manages to predict the exact number of distinct clusters as well as a good estimate on the corresponding sizes, whereas case A shows a problematic prediction regarding protohalo identification where a major density patch is split into two sub-structures. This behaviour is unwanted as the reconstructed region will suffer from oversegmentation}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Generating halo catalogs and bias correction}{7}{subsection.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces An example protohalo region that conveys very well the need for an adaptive version of the watershed algorithm. On the left a zoomed in slice of two predicted clusters is shown. The middle pane shows the raw cluster reconstruction from the native watershed algorithm, whereas the result of the adaptive post-processed version is shown on the right. Given the true protohalo boundaries overlayed in green in all three plots, it is evident that the adaptive watershed algorithm yields better estimates regarding the individual sizes of neighboring clusters, as problematic regions are filtered away.}}{7}{figure.6}}
+\newlabel{fig:adaptive_example}{{6}{7}{An example protohalo region that conveys very well the need for an adaptive version of the watershed algorithm. On the left a zoomed in slice of two predicted clusters is shown. The middle pane shows the raw cluster reconstruction from the native watershed algorithm, whereas the result of the adaptive post-processed version is shown on the right. Given the true protohalo boundaries overlayed in green in all three plots, it is evident that the adaptive watershed algorithm yields better estimates regarding the individual sizes of neighboring clusters, as problematic regions are filtered away}{figure.6}{}}
+\citation{Karpatne2017}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces We show two example trajectories in the ($V,\mathaccentV {bar}016{d}$)-space of two individual haloes in black, where increasing the contour threshold results in smaller and thus less massive regions. Beyond the dashed contour individual bins contain less than 10 intersections, implying very low statistics. Calibrating with the ground truth halo mass function yields the scatter markers where blue dots and orange circles represent training and validation data, where it is apparent that the overestimation follows the same trend in both datasets. We manually fit a piece-wise linear function (red) through the training scatter to retrieve the adaptive relation between $V$ and $\mathaccentV {bar}016{d}$. The corrected protohalo sizes then correspond to the bin where their trajectories intersect the fitted relation.}}{8}{figure.7}}
+\newlabel{fig:fit}{{7}{8}{We show two example trajectories in the ($V,\bar {d}$)-space of two individual haloes in black, where increasing the contour threshold results in smaller and thus less massive regions. Beyond the dashed contour individual bins contain less than 10 intersections, implying very low statistics. Calibrating with the ground truth halo mass function yields the scatter markers where blue dots and orange circles represent training and validation data, where it is apparent that the overestimation follows the same trend in both datasets. We manually fit a piece-wise linear function (red) through the training scatter to retrieve the adaptive relation between $V$ and $\bar {d}$. The corrected protohalo sizes then correspond to the bin where their trajectories intersect the fitted relation}{figure.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions and future work}{8}{section.5}}
+\newlabel{sec:conclusion}{{5}{8}{Conclusions and future work}{section.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Reconstructed cumulative halo mass functions for the training (left) and validation (right) simulations at $z=0$, where N(>M) is the number of haloes with a mass greater than M. The corresponding ground truths are shown in black and the color shaded regions denote the Poisson uncertainty in the corresponding mass bin. Also shown as insets are the differential versions with the predicted and true halo number counts as well as the percentage deviation from the ground truth halo mass functions.}}{9}{figure.8}}
+\newlabel{fig:hmfT}{{8}{9}{Reconstructed cumulative halo mass functions for the training (left) and validation (right) simulations at $z=0$, where N(>M) is the number of haloes with a mass greater than M. The corresponding ground truths are shown in black and the color shaded regions denote the Poisson uncertainty in the corresponding mass bin. Also shown as insets are the differential versions with the predicted and true halo number counts as well as the percentage deviation from the ground truth halo mass functions}{figure.8}{}}
+\bibstyle{mnras}
+\bibdata{References}
+\bibcite{Agarwal2018}{{1}{2017}{{Agarwal et~al.}}{{Agarwal, Dav\IeC {\'e} \& Bassett}}}
+\bibcite{Calvo2019}{{2}{2019}{{{Aragon-Calvo}}}{{{Aragon-Calvo}}}}
+\bibcite{bengio1994}{{3}{1994}{{{Bengio} et~al.}}{{{Bengio}, {Simard} \& {Frasconi}}}}
+\bibcite{Berger2019}{{4}{2019}{{{Berger} \& {Stein}}}{{{Berger} \& {Stein}}}}
+\bibcite{Bond1991}{{5}{1991}{{{Bond} et~al.}}{{{Bond}, {Cole}, {Efstathiou} \& {Kaiser}}}}
+\bibcite{Chollet2015}{{6}{2015}{{Chollet et~al.}}{{Chollet et~al.}}}
+\bibcite{Eisenstein1998}{{7}{1998}{{Eisenstein \& Hut}}{{Eisenstein \& Hut}}}
+\bibcite{Feldmann_2019}{{8}{2019}{{Feldmann et~al.}}{{Feldmann, Faucher-Gigu\IeC {\`e}re \& Kere\IeC {\v s}}}}
+\bibcite{Guo2010}{{9}{2010}{{Guo et~al.}}{{Guo, White, Li \& Boylan-Kolchin}}}
+\bibcite{He2018}{{10}{2019}{{{He} et~al.}}{{{He}, {Li}, {Feng}, {Ho}, {Ravanbakhsh}, {Chen} \& {P{\'o}czos}}}}
+\bibcite{Howlett2015}{{11}{2015}{{{Howlett} et~al.}}{{{Howlett}, {Manera} \& {Percival}}}}
+\bibcite{Isensee2018}{{12}{2018}{{Isensee et~al.}}{{Isensee, Kickingereder, Wick, Bendszus \& Maier-Hein}}}
+\bibcite{Karpatne2017}{{13}{2017}{{Karpatne et~al.}}{{Karpatne, Watkins, Read \& Kumar}}}
+\bibcite{Kornilov2018}{{14}{2018}{{Kornilov \& Safonov}}{{Kornilov \& Safonov}}}
+\bibcite{Krizhevsky2012}{{15}{2012}{{Krizhevsky et~al.}}{{Krizhevsky, Sutskever \& Hinton}}}
+\bibcite{LeCun1998}{{16}{1998}{{LeCun et~al.}}{{LeCun, Bottou, Orr \& M{\"u}ller}}}
+\bibcite{Liu2015}{{17}{2015}{{Liu et~al.}}{{Liu, Rabinovich \& Berg}}}
+\bibcite{LucieSmith2018}{{18}{2018}{{{Lucie-Smith} et~al.}}{{{Lucie-Smith}, {Peiris}, {Pontzen} \& {Lochner}}}}
+\bibcite{Milletari2016}{{19}{2016}{{Milletari et~al.}}{{Milletari, Navab \& Ahmadi}}}
+\bibcite{Naylor2019}{{20}{2019}{{Naylor et~al.}}{{Naylor, La{\'e}, Reyal \& Walter}}}
+\bibcite{Noh2015}{{21}{2015}{{Noh et~al.}}{{Noh, Hong \& Han}}}
+\bibcite{Press_Schechter1974}{{22}{1974}{{{Press} \& {Schechter}}}{{{Press} \& {Schechter}}}}
+\bibcite{Reed2003}{{23}{2003}{{{Reed} et~al.}}{{{Reed}, {Gardner}, {Quinn}, {Stadel}, {Fardal}, {Lake} \& {Governato}}}}
+\bibcite{Ronneberger2015}{{24}{2015}{{Ronneberger et~al.}}{{Ronneberger, Fischer \& Brox}}}
+\bibcite{Sheth2001}{{25}{2001}{{{Sheth} et~al.}}{{{Sheth}, {Mo} \& {Tormen}}}}
+\bibcite{Srivastava2014}{{26}{2014}{{Srivastava et~al.}}{{Srivastava, Hinton, Krizhevsky, Sutskever \& Salakhutdinov}}}
+\bibcite{pkdgrav2000}{{27}{2000}{{Stadel et~al.}}{{Stadel et~al.}}}
+\bibcite{Wechsler2018}{{28}{2018}{{Wechsler \& Tinker}}{{Wechsler \& Tinker}}}
+\bibcite{Zhang2019}{{29}{2019}{{Zhang et~al.}}{{Zhang, Wang, Zhang, Sun, He, Contardo, Villaescusa-Navarro \& Ho}}}
+\newlabel{lastpage}{{5}{10}{Acknowledgements}{section.5}{}}

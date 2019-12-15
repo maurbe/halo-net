@@ -61,7 +61,7 @@ def get_model(input_shape,
     print(p4._keras_shape)
 
     c5      = conv3d_block(input_tensor=p4, n_filters=n_filters * 16, kernel_size=kernel_size, lrelu_alpha=lrelu_alpha)
-    p5 = MaxPooling3D(pool_size=(pool_size, pool_size, pool_size))(c5)
+    p5      = MaxPooling3D(pool_size=(pool_size, pool_size, pool_size))(c5)
     p5      = Dropout(rate=dropout_rate_conv)(p5)
     print(c5._keras_shape)
 

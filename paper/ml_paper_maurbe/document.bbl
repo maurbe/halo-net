@@ -1,0 +1,173 @@
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@}
+  {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href
+  {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi
+  \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml}
+  {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc
+  {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx
+  \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined
+  {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname
+  mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
+
+\bibitem[\protect\citeauthoryear{Agarwal, Davé  \& Bassett}{Agarwal
+  et~al.}{2017}]{Agarwal2018}
+Agarwal S.,  Davé R.,   Bassett B.,  2017, \mn@doi [MNRAS]
+  {10.1093/MNRAS/STY1169}, 478
+
+\bibitem[\protect\citeauthoryear{{Aragon-Calvo}}{{Aragon-Calvo}}{2019}]{Calvo2019}
+{Aragon-Calvo} M.~A.,  2019, \mn@doi [\mnras] {10.1093/mnras/stz393}, \href
+  {https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.5771A} {484, 5771}
+
+\bibitem[\protect\citeauthoryear{{Bengio}, {Simard}  \& {Frasconi}}{{Bengio}
+  et~al.}{1994}]{bengio1994}
+{Bengio} Y.,  {Simard} P.,   {Frasconi} P.,  1994, \mn@doi [IEEE Transactions
+  on Neural Networks] {10.1109/72.279181}, 5, 157
+
+\bibitem[\protect\citeauthoryear{{Berger} \& {Stein}}{{Berger} \&
+  {Stein}}{2019}]{Berger2019}
+{Berger} P.,  {Stein} G.,  2019, \mn@doi [\mnras] {10.1093/mnras/sty2949},
+  \href {https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.2861B} {482, 2861}
+
+\bibitem[\protect\citeauthoryear{{Bond}, {Cole}, {Efstathiou}  \&
+  {Kaiser}}{{Bond} et~al.}{1991}]{Bond1991}
+{Bond} J.~R.,  {Cole} S.,  {Efstathiou} G.,   {Kaiser} N.,  1991, \mn@doi
+  [\apj] {10.1086/170520}, \href
+  {https://ui.adsabs.harvard.edu/abs/1991ApJ...379..440B} {379, 440}
+
+\bibitem[\protect\citeauthoryear{Chollet et~al.}{Chollet
+  et~al.}{2015}]{Chollet2015}
+Chollet F.,  et~al., 2015, Keras, \url{https://keras.io}
+
+\bibitem[\protect\citeauthoryear{Eisenstein \& Hut}{Eisenstein \&
+  Hut}{1998}]{Eisenstein1998}
+Eisenstein D.,  Hut P.,  1998, \color{blue}ApJ\color{black}, 498, 137
+
+\bibitem[\protect\citeauthoryear{Feldmann, Faucher-Giguère  \&
+  Kereš}{Feldmann et~al.}{2019}]{Feldmann_2019}
+Feldmann R.,  Faucher-Giguère C.-A.,   Kereš D.,  2019, \mn@doi [The
+  Astrophysical Journal] {10.3847/2041-8213/aafe80}, 871, L21
+
+\bibitem[\protect\citeauthoryear{Guo, White, Li  \& Boylan-Kolchin}{Guo
+  et~al.}{2010}]{Guo2010}
+Guo Q.,  White S.,  Li C.,   Boylan-Kolchin M.,  2010, \mn@doi [Monthly Notices
+  of the Royal Astronomical Society] {10.1111/j.1365-2966.2010.16341.x}
+
+\bibitem[\protect\citeauthoryear{{He}, {Li}, {Feng}, {Ho}, {Ravanbakhsh},
+  {Chen}  \& {P{\'o}czos}}{{He} et~al.}{2019}]{He2018}
+{He} S.,  {Li} Y.,  {Feng} Y.,  {Ho} S.,  {Ravanbakhsh} S.,  {Chen} W.,
+  {P{\'o}czos} B.,  2019, \mn@doi [Proceedings of the National Academy of
+  Science] {10.1073/pnas.1821458116}, \href
+  {https://ui.adsabs.harvard.edu/abs/2019PNAS..11613825H} {116, 13825}
+
+\bibitem[\protect\citeauthoryear{{Howlett}, {Manera}  \& {Percival}}{{Howlett}
+  et~al.}{2015}]{Howlett2015}
+{Howlett} C.,  {Manera} M.,   {Percival} W.~J.,  2015, \mn@doi [Astronomy and
+  Computing] {10.1016/j.ascom.2015.07.003}, \href
+  {https://ui.adsabs.harvard.edu/abs/2015A&C....12..109H} {12, 109}
+
+\bibitem[\protect\citeauthoryear{Isensee, Kickingereder, Wick, Bendszus  \&
+  Maier-Hein}{Isensee et~al.}{2018}]{Isensee2018}
+Isensee F.,  Kickingereder P.,  Wick W.,  Bendszus M.,   Maier-Hein K.~H.,
+  2018, Brain Tumor Segmentation and Radiomics Survival Prediction:
+  Contribution to the BRATS 2017 Challenge (\mn@eprint {arXiv} {1802.10508})
+
+\bibitem[\protect\citeauthoryear{Karpatne, Watkins, Read  \& Kumar}{Karpatne
+  et~al.}{2017}]{Karpatne2017}
+Karpatne A.,  Watkins W.,  Read J.,   Kumar V.,  2017, Physics-guided Neural
+  Networks (PGNN): An Application in Lake Temperature Modeling (\mn@eprint
+  {arXiv} {1710.11431})
+
+\bibitem[\protect\citeauthoryear{Kornilov \& Safonov}{Kornilov \&
+  Safonov}{2018}]{Kornilov2018}
+Kornilov A.,  Safonov I.,  2018, \mn@doi [Journal of Imaging]
+  {10.3390/jimaging4100123}, 4, 123
+
+\bibitem[\protect\citeauthoryear{Krizhevsky, Sutskever  \& Hinton}{Krizhevsky
+  et~al.}{2012}]{Krizhevsky2012}
+Krizhevsky A.,  Sutskever I.,   Hinton G.~E.,  2012, in , Advances in Neural
+  Information Processing Systems 25.
+pp 1097--1105
+
+\bibitem[\protect\citeauthoryear{LeCun, Bottou, Orr  \& M{\"u}ller}{LeCun
+  et~al.}{1998}]{LeCun1998}
+LeCun Y.,  Bottou L.,  Orr G.~B.,   M{\"u}ller K.-R.,  1998, in Neural
+  Networks: Tricks of the Trade.
+
+\bibitem[\protect\citeauthoryear{Liu, Rabinovich  \& Berg}{Liu
+  et~al.}{2015}]{Liu2015}
+Liu W.,  Rabinovich A.,   Berg A.~C.,  2015, ParseNet: Looking Wider to See
+  Better (\mn@eprint {arXiv} {1506.04579})
+
+\bibitem[\protect\citeauthoryear{{Lucie-Smith}, {Peiris}, {Pontzen}  \&
+  {Lochner}}{{Lucie-Smith} et~al.}{2018}]{LucieSmith2018}
+{Lucie-Smith} L.,  {Peiris} H.~V.,  {Pontzen} A.,   {Lochner} M.,  2018,
+  \mn@doi [\mnras] {10.1093/mnras/sty1719}, \href
+  {https://ui.adsabs.harvard.edu/abs/2018MNRAS.479.3405L} {479, 3405}
+
+\bibitem[\protect\citeauthoryear{Milletari, Navab  \& Ahmadi}{Milletari
+  et~al.}{2016}]{Milletari2016}
+Milletari F.,  Navab N.,   Ahmadi S.-A.,  2016, V-Net: Fully Convolutional
+  Neural Networks for Volumetric Medical Image Segmentation (\mn@eprint {arXiv}
+  {1606.04797})
+
+\bibitem[\protect\citeauthoryear{Naylor, La{\'e}, Reyal  \& Walter}{Naylor
+  et~al.}{2019}]{Naylor2019}
+Naylor P.,  La{\'e} M.,  Reyal F.,   Walter T.,  2019, IEEE Transactions on
+  Medical Imaging, 38, 448
+
+\bibitem[\protect\citeauthoryear{Noh, Hong  \& Han}{Noh et~al.}{2015}]{Noh2015}
+Noh H.,  Hong S.,   Han B.,  2015, Learning Deconvolution Network for Semantic
+  Segmentation (\mn@eprint {arXiv} {1505.04366})
+
+\bibitem[\protect\citeauthoryear{{Press} \& {Schechter}}{{Press} \&
+  {Schechter}}{1974}]{Press_Schechter1974}
+{Press} W.~H.,  {Schechter} P.,  1974, \mn@doi [\apj] {10.1086/152650}, \href
+  {https://ui.adsabs.harvard.edu/abs/1974ApJ...187..425P} {187, 425}
+
+\bibitem[\protect\citeauthoryear{{Reed}, {Gardner}, {Quinn}, {Stadel},
+  {Fardal}, {Lake}  \& {Governato}}{{Reed} et~al.}{2003}]{Reed2003}
+{Reed} D.,  {Gardner} J.,  {Quinn} T.,  {Stadel} J.,  {Fardal} M.,  {Lake} G.,
+   {Governato} F.,  2003, \mn@doi [\mnras] {10.1046/j.1365-2966.2003.07113.x},
+  \href {https://ui.adsabs.harvard.edu/abs/2003MNRAS.346..565R} {346, 565}
+
+\bibitem[\protect\citeauthoryear{Ronneberger, Fischer  \& Brox}{Ronneberger
+  et~al.}{2015}]{Ronneberger2015}
+Ronneberger O.,  Fischer P.,   Brox T.,  2015, U-Net: Convolutional Networks
+  for Biomedical Image Segmentation (\mn@eprint {arXiv} {1505.04597})
+
+\bibitem[\protect\citeauthoryear{{Sheth}, {Mo}  \& {Tormen}}{{Sheth}
+  et~al.}{2001}]{Sheth2001}
+{Sheth} R.~K.,  {Mo} H.~J.,   {Tormen} G.,  2001, \mn@doi [\mnras]
+  {10.1046/j.1365-8711.2001.04006.x}, \href
+  {https://ui.adsabs.harvard.edu/abs/2001MNRAS.323....1S} {323, 1}
+
+\bibitem[\protect\citeauthoryear{Srivastava, Hinton, Krizhevsky, Sutskever  \&
+  Salakhutdinov}{Srivastava et~al.}{2014}]{Srivastava2014}
+Srivastava N.,  Hinton G.,  Krizhevsky A.,  Sutskever I.,   Salakhutdinov R.,
+  2014, Journal of Machine Learning Research, 15, 1929
+
+\bibitem[\protect\citeauthoryear{Stadel et~al.}{Stadel
+  et~al.}{2000}]{pkdgrav2000}
+Stadel J.,  et~al., 2000
+
+\bibitem[\protect\citeauthoryear{Wechsler \& Tinker}{Wechsler \&
+  Tinker}{2018}]{Wechsler2018}
+Wechsler R.~H.,  Tinker J.~L.,  2018, \mn@doi [Annual Review of Astronomy and
+  Astrophysics] {10.1146/annurev-astro-081817-051756}, 56, 435–487
+
+\bibitem[\protect\citeauthoryear{Zhang, Wang, Zhang, Sun, He, Contardo,
+  Villaescusa-Navarro  \& Ho}{Zhang et~al.}{2019}]{Zhang2019}
+Zhang X.,  Wang Y.,  Zhang W.,  Sun Y.,  He S.,  Contardo G.,
+  Villaescusa-Navarro F.,   Ho S.,  2019, From Dark Matter to Galaxies with
+  Convolutional Networks (\mn@eprint {arXiv} {1902.05965})
+
+\makeatother
+\end{thebibliography}

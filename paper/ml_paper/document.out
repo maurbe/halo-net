@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Deep Learning for structure identification}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Cosmological N-body simulations}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Formulating the network mapping}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Generating synthetic training samples}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Neural network implementation}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{U-net architecture}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Training the neural network}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{From distance information to segmentation maps}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Generating halo catalogs and bias correction}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Conclusions and future work}{}% 11

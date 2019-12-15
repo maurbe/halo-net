@@ -114,10 +114,9 @@ plt.xlabel(r'$\log_{10}(V)$', size=15)
 plt.ylabel(r'$\bar{d}$', size=15)
 plt.tight_layout()
 plt.savefig('correction_src/fitA.png', dpi=300)
-plt.show()
 
 
-"""
+
 # Plot 4: x = contour_thresholds, y = proto halo masses, z = intersection counts
 xx, yy = np.meshgrid(np.arange(hist.shape[1]), np.arange(hist.shape[0]))
 f, ax = plt.subplots(figsize=(7,7))
@@ -138,10 +137,10 @@ for points, mar in zip(index_pairs_of_dots, markers):
         ax.scatter(points[0], points[1], marker=mar, color='purple', edgecolors='k', zorder=3)
     else:
         ax.scatter(points[0], points[1], marker=mar, color='cornflowerblue', edgecolors='k', zorder=3)
+np.save('correction_src/scatter_points_val.npy', index_pairs_of_dots)
 
 # transform the values from mass fit to the imshow indices [0, 1, ...], really painful.
-trans_X = len(bin_edges_X) * (fit_M(bin_edges_Y) - bin_edges_X.min()) / abs(bin_edges_X.min() - bin_edges_X.max())
+trans_X = len(bin_edges_X) * ([fit(y) for y in bin_edges_Y] - bin_edges_X.min()) / abs(bin_edges_X.min() - bin_edges_X.max())
 trans_Y = len(bin_edges_Y) * (bin_edges_Y - bin_edges_Y.min()) / abs(bin_edges_Y[0] - bin_edges_Y[-1])
 ax.plot(trans_Y, trans_X, color='orange', linestyle='-', linewidth=5, alpha=0.7, zorder=2)
 plt.show()
-"""

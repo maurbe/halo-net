@@ -9,6 +9,7 @@ runs
 *.hdf5
 *.pkl
 *.mp4
+*.png
 analysis/hmfT/overlay_new.png
 source/analytical_fit.py
 unet/run_1/history/

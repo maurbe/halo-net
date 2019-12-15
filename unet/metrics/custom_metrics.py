@@ -27,6 +27,12 @@ def selective_mse(y_true, y_pred):
     y_pred = selection(tensor=y_pred, buffer=buffer)
     return mean_squared_error(y_true, y_pred)
 
+def selective_mse_normalized(y_true, y_pred):
+    buffer = 16
+    y_true = selection(tensor=y_true, buffer=buffer)
+    y_pred = selection(tensor=y_pred, buffer=buffer)
+    return mean_squared_error(y_true, y_pred) / (K.mean(y_true + K.epsilon()) + K.epsilon())
+
 def selective_mae(y_true, y_pred):
     buffer = 16
     y_true = selection(tensor=y_true, buffer=buffer)

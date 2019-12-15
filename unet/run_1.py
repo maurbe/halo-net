@@ -31,7 +31,7 @@ from helpers.custom_callbacks import (Paranoia,
                                       Optimizer_cb,
                                       Live_Prediction_cb,
                                       Custom_checkpointer)
-from metrics.custom_metrics import (selective_mse,
+from metrics.custom_metrics import (selective_mse, selective_mse_normalized,
                                     selective_mae, selective_mae_normalized,
                                     r2_score, selective_r2_score)
 from generator.datagen import custom_DataGenerator
@@ -71,7 +71,7 @@ net.compile(optimizer=Adam(lr=1e-4, clipvalue=0.5),
                      'mae', selective_mae, selective_mae_normalized,
                       r2_score, selective_r2_score])
 net.summary(line_length=150)
-#plot_model(net, to_file=RUN_FOLDER+'net.png', show_shapes=True, show_layer_names=True)
+# plot_model(net, to_file=RUN_FOLDER+'net.png', show_shapes=True, show_layer_names=True)
 
 callbacks = [Custom_checkpointer(save_folder=RUN_FOLDER + '/saved_networks/', interval=5, mode='weights_only'),
              Optimizer_cb(save_folder=RUN_FOLDER + '/saved_networks/', interval=5),

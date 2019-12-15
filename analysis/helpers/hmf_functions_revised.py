@@ -211,7 +211,7 @@ def find_correction(distance, sim, homedir, preload=True):
 
     # step 2: for each region collect the masses varying with threshold
     filtered_regions    = nd.find_objects(labels_wsF)
-    thresholds          = np.linspace(0, 1, 100)
+    thresholds          = np.linspace(0, 1, 15)
     dmean_vals           = []
     volumes              = []
 

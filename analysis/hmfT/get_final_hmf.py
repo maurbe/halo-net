@@ -2,6 +2,7 @@ import numpy as np, os
 import pandas as pd
 import matplotlib.ticker as ticker
 from analysis.helpers.plotting_help import *
+plt.style.use('/Users/Mauro/Desktop/Biotop2/graphics/mystyle.mplstyle')
 
 projectdir = os.path.dirname(os.path.dirname(os.getcwd())) + '/'
 data = pd.read_csv(projectdir + 'source/catalogT/catalogT.csv', delimiter='\t')
@@ -32,20 +33,20 @@ fig.subplots_adjust(hspace=0.0)
 x = np.linspace(all_sets.min(), all_sets.max(), no_bins) - np.log10(64.0/5.66e10)
 
 # Inset plot
-ax_inset = fig.add_axes([0.2, 0.41, 0.32, 0.2])
+ax_inset = fig.add_axes([0.25, 0.48, 0.32, 0.2])
 counts_log_halo_sizes = ax_inset.hist(halo_sizes, bins=bins, log=True, cumulative=-1, color='k', alpha=0.1)[0]
 counts_log_pred = ax_inset.hist(ps_pred, bins=bins, log=True, cumulative=-1, histtype='step', color='cornflowerblue')[0]
 ax_inset.cla()
 ax_inset.hist(halo_sizes - np.log10(64.0/5.66e10), bins=bins_inset, log=True, cumulative=0, color='k', alpha=0.2)[0]
 ax_inset.hist(ps_pred - np.log10(64.0/5.66e10), bins=bins_inset, log=True, cumulative=0, histtype='step', color='#1565C0')[0]
-ax_inset.set_ylabel('N', fontsize=10)
-ax_inset.set_xlabel(r'$\log_{10}(\mathrm{M/M}_{\odot})$', fontsize=10)
+ax_inset.set_ylabel('N')
+ax_inset.set_xlabel(r'$\log_{10}(\mathrm{M/M}_{\odot})$')
 ax_inset.xaxis.labelpad = 3
-ax_inset.yaxis.labelpad = -2
+ax_inset.yaxis.labelpad = -5
 for tick in ax_inset.get_xticklabels():
-    tick.set_fontsize(7)
+    tick.set_fontsize(10)
 for tick in ax_inset.get_yticklabels():
-    tick.set_fontsize(7)
+    tick.set_fontsize(10)
 start, end = ax_inset.get_xlim()
 ax_inset.xaxis.set_ticks(np.linspace(start, end, num=7)[1:-1])
 ax_inset.xaxis.set_major_formatter(ticker.FormatStrFormatter('%0.1f'))
@@ -77,6 +78,7 @@ ax2.set_ylabel(r'$\Delta$ $[\%]$')
 ax2.set_xlabel(r'$\log_{10}(\mathrm{M/M}_{\odot})$')
 ax2.set_ylim((-1.0, 1.0))
 ax2.set_yticks([-1.0, -0.5, -0.1, 0.1, 0.5, 1.0])
+ax2.set_xticks([13, 13.5, 14, 14.5])
 plt.savefig('hmfT.png', dpi=300)
 plt.show()
 

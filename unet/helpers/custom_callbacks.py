@@ -138,16 +138,11 @@ class Live_Prediction_cb(callbacks.Callback):
         return cb
 
     def make_regular_plot(self, x, y, pred, t, epoch):
-        mcmap = LinearSegmentedColormap.from_list('mycmap', ['#3F1F47', '#5C3C9A', '#6067B3',
-                                                             #   '#969CCA',
-                                                             '#6067B3', '#5C3C9A', '#45175D', '#2F1435',
-                                                             '#601A49', '#8C2E50', '#A14250',
-                                                             '#B86759',
-                                                             '#E0D9E1'][::-1])
+
         f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 5))
         im1 = ax1.imshow(x[:, :, 50, 0], cmap='magma', vmin=-3, vmax=3)
-        im2 = ax2.imshow(y[:, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
-        im3 = ax3.imshow(pred[0, :, :, 50, 0], cmap=mcmap, vmin=0.0, vmax=1.0)
+        im2 = ax2.imshow(y[:, :, 50, 0], cmap='twilight_r', vmin=0.0, vmax=1.0)
+        im3 = ax3.imshow(pred[0, :, :, 50, 0], cmap='twilight_r', vmin=0.0, vmax=1.0)
 
         cb1 = self.colorbar(im1, 'Input density contrast')
         cb2 = self.colorbar(im2, 'Ground truth distance')
@@ -204,7 +199,7 @@ class Live_Prediction_cb(callbacks.Callback):
         plt.close()
 
     def on_epoch_end(self, epoch, logs=None):
-        for t in [0, 13, 26, 50, 53, 62]:
+        for t in [57, 96, 123, 176]: #[0, 13, 26, 50, 53, 62]:
             x = np.load(os.getcwd() + '/data/validation/x_{}.npy'.format(t))
             y = np.load(os.getcwd() + '/data/validation/y_{}.npy'.format(t))
             pred = self.model.predict(x[np.newaxis, ...])
