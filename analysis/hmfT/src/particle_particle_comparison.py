@@ -39,5 +39,7 @@ hist, ybins, xbins, image = plt.hist2d(np.log10(1+cic_yT.flatten()), np.log10(1+
 plt.plot( [12,15], [12,15], linewidth=2)
 plt.xlabel(r'$\log_{10}(M_{\mathrm{true}}/M_{\odot})$')
 plt.ylabel(r'$\log_{10}(M_{\mathrm{pred}}/M_{\odot})$')
+plt.colorbar(label='counts')
+plt.title('particle by particle comparison')
 plt.savefig('comparisonT.png', dpi=200)
 plt.show()

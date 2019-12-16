@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3ee9ac13-df55-43fa-9163-3bd2f8fa06e1" name="UZH s3it Cluster" url="http://cluster.s3it.uzh.ch">
+        <fileTransfer host="cluster.s3it.uzh.ch" port="22" rootFolder="/home/cluster/maurbe" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
